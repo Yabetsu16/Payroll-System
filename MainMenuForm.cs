@@ -24,5 +24,12 @@ namespace Payroll
             login.Show();
             Hide();
         }
+
+        private void employeesBtn_Click(object sender, EventArgs e)
+        {
+            EmployeeForm employee = new EmployeeForm();
+            employee.Show();
+            Hide();
+        }
     }
 }
