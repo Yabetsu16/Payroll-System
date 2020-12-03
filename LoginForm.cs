@@ -29,9 +29,20 @@ namespace Payroll
 
                 if (verify)
                 {
-                    MainMenuForm mainMenu = new MainMenuForm();
                     MessageBox.Show("Welcome " + users.username + ".");
-                    mainMenu.Show();
+                    if (users.type == "ADMIN")
+                    {
+                        MainMenuForm mainMenu = new MainMenuForm();
+                        mainMenu.Show();
+                    }
+                    else
+                    {
+                        TimeKeepingForm timeKeepingForm = new TimeKeepingForm();
+                        timeKeepingForm.username = usernameTb.Text;
+                        timeKeepingForm.password = passwordTb.Text;
+                        timeKeepingForm.Show();
+                    }
+
                     Hide();
                 }
                 else

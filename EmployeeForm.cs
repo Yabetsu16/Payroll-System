@@ -14,6 +14,8 @@ namespace Payroll
     public partial class EmployeeForm : Form
     {
         EmployeesClass employees = new EmployeesClass();
+        UsersClass users = new UsersClass();
+        TimeKeepingClass timeKeeping = new TimeKeepingClass();
         public int id;
 
         public EmployeeForm()
@@ -39,6 +41,16 @@ namespace Payroll
         private void CloseEditPanel()
         {
             editEmployeePanel.Visible = false;
+        }
+
+        private void OpenTimeKeepingPanel()
+        {
+            timeKeepingPanel.Visible = true;
+        }
+
+        private void CloseTimeKeepingPanel()
+        {
+            timeKeepingPanel.Visible = false;
         }
 
         private void CreateButtonDataGridView()
@@ -72,7 +84,7 @@ namespace Payroll
             employeeDgv.Columns.Remove("timeKeepingDgvBtn");
         }
 
-        public void RefreshDataGridView()
+        public void RefreshEmployeeDataGridView()
         {
             employeeDgv.DataSource = null;
             employees.ShowEmployees();
@@ -80,7 +92,20 @@ namespace Payroll
             employeeDgv.Columns[0].HeaderText = "Employee ID";
             employeeDgv.Columns[1].HeaderText = "Firstname";
             employeeDgv.Columns[2].HeaderText = "Lastname";
-            employeeDgv.Columns[3].HeaderText = "Type";
+            employeeDgv.Columns[3].HeaderText = "Username";
+            employeeDgv.Columns[4].HeaderText = "Password";
+            employeeDgv.Columns[5].HeaderText = "Type";
+        }
+
+        private void RefreshTimeKeepingDataGridView()
+        {
+            timeKeepingDgv.DataSource = null;
+            timeKeeping.ShowTimeKeeping();
+            timeKeepingDgv.DataSource = timeKeeping.dataTable;
+            timeKeepingDgv.Columns[0].Visible = false;
+            timeKeepingDgv.Columns[1].Visible = false;
+            timeKeepingDgv.Columns[2].HeaderText = "Time In";
+            timeKeepingDgv.Columns[3].HeaderText = "Time Out";
         }
 
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -92,10 +117,11 @@ namespace Payroll
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
-            RefreshDataGridView();
+            RefreshEmployeeDataGridView();
             CreateButtonDataGridView();
             CloseAddPanel();
             CloseEditPanel();
+            CloseTimeKeepingPanel();
         }
 
         private void showAddPanelBtn_Click(object sender, EventArgs e)
@@ -113,7 +139,7 @@ namespace Payroll
 
                 employees.AddEmployee();
                 RemoveButtonDataGridView();
-                RefreshDataGridView();
+                RefreshEmployeeDataGridView();
                 CreateButtonDataGridView();
                 CloseAddPanel();
             }
@@ -135,17 +161,23 @@ namespace Payroll
         {
             try
             {
-                if (e.ColumnIndex == 4)
+                if (e.ColumnIndex == 6)
                 {
                     id = (int)employeeDgv.Rows[e.RowIndex].Cells[0].Value;
                     editFirstnameTb.Text = employeeDgv.Rows[e.RowIndex].Cells[1].Value.ToString();
                     editLastnameTb.Text = employeeDgv.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    editTypeComB.SelectedItem = employeeDgv.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    editUsernameTb.Text = employeeDgv.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    editPasswordTb.Text = employeeDgv.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    employees.currentUsername = employeeDgv.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    employees.currentPassword = employeeDgv.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    editTypeComB.SelectedItem = employeeDgv.Rows[e.RowIndex].Cells[5].Value.ToString();
                     OpenEditPanel();
                     Console.WriteLine("ID: " + id);
+                    Console.WriteLine("Username: " + employees.currentUsername);
+                    Console.WriteLine("Password: " + employees.currentPassword);
                 }
 
-                if (e.ColumnIndex == 5)
+                if (e.ColumnIndex == 7)
                 {
                     id = (int)employeeDgv.Rows[e.RowIndex].Cells[0].Value;
 
@@ -157,9 +189,18 @@ namespace Payroll
                         employees.id = id;
                         employees.RemoveEmployee();
                         RemoveButtonDataGridView();
-                        RefreshDataGridView();
+                        RefreshEmployeeDataGridView();
                         CreateButtonDataGridView();
                     }
+                }
+
+                if (e.ColumnIndex == 8)
+                {
+                    id = (int)employeeDgv.Rows[e.RowIndex].Cells[0].Value;
+                    nameTimeKeepingLbl.Text = employeeDgv.Rows[e.RowIndex].Cells[1].Value + " "
+                        + employeeDgv.Rows[e.RowIndex].Cells[2].Value;
+                    timeKeeping.employeeId = id;
+                    OpenTimeKeepingPanel();
                 }
             }
             catch
@@ -178,10 +219,12 @@ namespace Payroll
             employees.id = id;
             employees.firstname = editFirstnameTb.Text;
             employees.lastname = editLastnameTb.Text;
+            employees.username = editUsernameTb.Text;
+            employees.password = editPasswordTb.Text;
             employees.type = editTypeComB.SelectedItem.ToString();
             employees.EditEmployee();
             RemoveButtonDataGridView();
-            RefreshDataGridView();
+            RefreshEmployeeDataGridView();
             CreateButtonDataGridView();
             CloseEditPanel();
         }
@@ -189,6 +232,19 @@ namespace Payroll
         private void searchBtn_Click(object sender, EventArgs e)
         {
             employees.SearchEmployees(searchTb.Text);
+        }
+
+        private void closeTimeKeepingBtn_Click(object sender, EventArgs e)
+        {
+            CloseTimeKeepingPanel();
+        }
+
+        private void timeKeepingPanel_VisibleChanged(object sender, EventArgs e)
+        {
+            if (timeKeepingPanel.Visible)
+            {
+                RefreshTimeKeepingDataGridView();
+            }
         }
     }
 }
