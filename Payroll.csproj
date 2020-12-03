@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Classes\ConnectionClass.cs" />
     <Compile Include="Classes\EmployeesClass.cs" />
+    <Compile Include="Classes\TimeKeepingClass.cs" />
     <Compile Include="Classes\UsersClass.cs" />
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -70,6 +71,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeKeepingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeKeepingForm.Designer.cs">
+      <DependentUpon>TimeKeepingForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +96,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TimeKeepingForm.resx">
+      <DependentUpon>TimeKeepingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
