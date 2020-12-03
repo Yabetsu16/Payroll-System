@@ -13,6 +13,7 @@ namespace Payroll.Classes
     {
         MySqlCommand command = new MySqlCommand();
         public string username { set; get; }
+
         public string password { set; get; }
 
         public string type { set; get; }

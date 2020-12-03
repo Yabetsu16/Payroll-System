@@ -43,6 +43,7 @@
             this.employeesBtn.TabIndex = 0;
             this.employeesBtn.Text = "Employees";
             this.employeesBtn.UseVisualStyleBackColor = true;
+            this.employeesBtn.Click += new System.EventHandler(this.employeesBtn_Click);
             // 
             // label1
             // 
@@ -75,6 +76,7 @@
             // 
             // logOutBtn
             // 
+            this.logOutBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.logOutBtn.Location = new System.Drawing.Point(170, 244);
             this.logOutBtn.Name = "logOutBtn";
             this.logOutBtn.Size = new System.Drawing.Size(171, 43);
