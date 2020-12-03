@@ -10,6 +10,7 @@ namespace Payroll.Classes
 {
     class TimeKeepingClass : ConnectionClass
     {
+        WorkClass work = new WorkClass();
         public DataTable dataTable = new DataTable();
         public DataSet dataSet = new DataSet();
 
@@ -164,8 +165,14 @@ namespace Payroll.Classes
 
         public void TimeOut()
         {
+            int day;
+            work.employeeId = employeeId;
+            work.GetDay();
+            day = work.day + 1;
+
             string query = "UPDATE time_keeping_tb SET logout_datetime = @timeout " +
-                "WHERE time_keeping_id = @time_keeping_id AND employee_id = @employee_id";
+                "WHERE time_keeping_id = @time_keeping_id AND employee_id = @employee_id; ";
+            query += "UPDATE work_tb SET day = @day WHERE emp_id = @employee_id";
 
             using (var command = new MySqlCommand())
             {
@@ -178,6 +185,7 @@ namespace Payroll.Classes
                 command.Parameters.Add("@time_keeping_id", MySqlDbType.Int32).Value = timekeepingId;
                 command.Parameters.Add("@timeout", MySqlDbType.VarChar).Value =
                     currentDateTime.ToString("MMM. dd, yyyy hh:mm tt");
+                command.Parameters.Add("@day", MySqlDbType.Int32).Value = day;
 
                 command.ExecuteNonQuery();
                 CloseConnection();

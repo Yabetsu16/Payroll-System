@@ -30,10 +30,16 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.timeKeepingPanel = new System.Windows.Forms.Panel();
+            this.nameTimeKeepingLbl = new System.Windows.Forms.Label();
             this.timeKeepingDgv = new System.Windows.Forms.DataGridView();
             this.closeTimeKeepingBtn = new System.Windows.Forms.Button();
+            this.employeeDgv = new System.Windows.Forms.DataGridView();
             this.editEmployeePanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.editPasswordTb = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.editUsernameTb = new System.Windows.Forms.TextBox();
             this.editFirstnameTb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,24 +61,22 @@
             this.label5 = new System.Windows.Forms.Label();
             this.addEmployeeBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
-            this.employeeDgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.showAddPanelBtn = new System.Windows.Forms.Button();
             this.searchTb = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.editUsernameTb = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.editPasswordTb = new System.Windows.Forms.TextBox();
-            this.nameTimeKeepingLbl = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.jobTb = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.editJob = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.timeKeepingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeKeepingDgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
             this.editEmployeePanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.addEmployeePanel.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,6 +102,19 @@
             this.timeKeepingPanel.TabIndex = 0;
             this.timeKeepingPanel.VisibleChanged += new System.EventHandler(this.timeKeepingPanel_VisibleChanged);
             // 
+            // nameTimeKeepingLbl
+            // 
+            this.nameTimeKeepingLbl.BackColor = System.Drawing.Color.Transparent;
+            this.nameTimeKeepingLbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.nameTimeKeepingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameTimeKeepingLbl.Location = new System.Drawing.Point(0, 0);
+            this.nameTimeKeepingLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameTimeKeepingLbl.Name = "nameTimeKeepingLbl";
+            this.nameTimeKeepingLbl.Size = new System.Drawing.Size(558, 48);
+            this.nameTimeKeepingLbl.TabIndex = 20;
+            this.nameTimeKeepingLbl.Text = "<name>";
+            this.nameTimeKeepingLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // timeKeepingDgv
             // 
             this.timeKeepingDgv.AllowUserToAddRows = false;
@@ -121,6 +138,21 @@
             this.closeTimeKeepingBtn.UseVisualStyleBackColor = true;
             this.closeTimeKeepingBtn.Click += new System.EventHandler(this.closeTimeKeepingBtn_Click);
             // 
+            // employeeDgv
+            // 
+            this.employeeDgv.AllowUserToAddRows = false;
+            this.employeeDgv.AllowUserToDeleteRows = false;
+            this.employeeDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.employeeDgv.BackgroundColor = System.Drawing.Color.White;
+            this.employeeDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeDgv.Location = new System.Drawing.Point(0, 0);
+            this.employeeDgv.Name = "employeeDgv";
+            this.employeeDgv.ReadOnly = true;
+            this.employeeDgv.Size = new System.Drawing.Size(1283, 566);
+            this.employeeDgv.TabIndex = 0;
+            this.employeeDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDgv_CellContentClick);
+            // 
             // editEmployeePanel
             // 
             this.editEmployeePanel.BackColor = System.Drawing.Color.Transparent;
@@ -131,11 +163,13 @@
             this.editEmployeePanel.Location = new System.Drawing.Point(968, 57);
             this.editEmployeePanel.Name = "editEmployeePanel";
             this.editEmployeePanel.Size = new System.Drawing.Size(315, 566);
-            this.editEmployeePanel.TabIndex = 4;
+            this.editEmployeePanel.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.editJob);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.editPasswordTb);
             this.panel4.Controls.Add(this.label10);
@@ -150,6 +184,38 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(309, 468);
             this.panel4.TabIndex = 18;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(9, 119);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 20);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Password";
+            // 
+            // editPasswordTb
+            // 
+            this.editPasswordTb.Location = new System.Drawing.Point(95, 116);
+            this.editPasswordTb.Name = "editPasswordTb";
+            this.editPasswordTb.Size = new System.Drawing.Size(202, 26);
+            this.editPasswordTb.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(9, 86);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 20);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Username";
+            // 
+            // editUsernameTb
+            // 
+            this.editUsernameTb.Location = new System.Drawing.Point(95, 83);
+            this.editUsernameTb.Name = "editUsernameTb";
+            this.editUsernameTb.Size = new System.Drawing.Size(202, 26);
+            this.editUsernameTb.TabIndex = 2;
             // 
             // editFirstnameTb
             // 
@@ -179,7 +245,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(46, 151);
+            this.label8.Location = new System.Drawing.Point(46, 183);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 20);
             this.label8.TabIndex = 10;
@@ -202,10 +268,10 @@
             "Contractual",
             "Part-Time",
             "Consultant"});
-            this.editTypeComB.Location = new System.Drawing.Point(95, 148);
+            this.editTypeComB.Location = new System.Drawing.Point(95, 180);
             this.editTypeComB.Name = "editTypeComB";
             this.editTypeComB.Size = new System.Drawing.Size(202, 28);
-            this.editTypeComB.TabIndex = 4;
+            this.editTypeComB.TabIndex = 5;
             // 
             // closeUpdatePanelBtn
             // 
@@ -247,7 +313,7 @@
             this.addEmployeePanel.Controls.Add(this.label5);
             this.addEmployeePanel.Controls.Add(this.addEmployeeBtn);
             this.addEmployeePanel.Controls.Add(this.clearBtn);
-            this.addEmployeePanel.Location = new System.Drawing.Point(968, 57);
+            this.addEmployeePanel.Location = new System.Drawing.Point(968, 58);
             this.addEmployeePanel.Name = "addEmployeePanel";
             this.addEmployeePanel.Size = new System.Drawing.Size(315, 566);
             this.addEmployeePanel.TabIndex = 3;
@@ -255,6 +321,8 @@
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.jobTb);
             this.panel2.Controls.Add(this.firstnameTb);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label2);
@@ -294,7 +362,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 86);
+            this.label3.Location = new System.Drawing.Point(46, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 10;
@@ -317,10 +385,10 @@
             "Contractual",
             "Part-Time",
             "Consultant"});
-            this.typeComB.Location = new System.Drawing.Point(96, 83);
+            this.typeComB.Location = new System.Drawing.Point(96, 115);
             this.typeComB.Name = "typeComB";
             this.typeComB.Size = new System.Drawing.Size(202, 28);
-            this.typeComB.TabIndex = 2;
+            this.typeComB.TabIndex = 3;
             // 
             // closeAddPanelBtn
             // 
@@ -363,21 +431,6 @@
             this.clearBtn.UseVisualStyleBackColor = true;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
-            // employeeDgv
-            // 
-            this.employeeDgv.AllowUserToAddRows = false;
-            this.employeeDgv.AllowUserToDeleteRows = false;
-            this.employeeDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.employeeDgv.BackgroundColor = System.Drawing.Color.White;
-            this.employeeDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.employeeDgv.Location = new System.Drawing.Point(0, 0);
-            this.employeeDgv.Name = "employeeDgv";
-            this.employeeDgv.ReadOnly = true;
-            this.employeeDgv.Size = new System.Drawing.Size(1283, 566);
-            this.employeeDgv.TabIndex = 0;
-            this.employeeDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDgv_CellContentClick);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -415,50 +468,37 @@
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // label10
+            // label12
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 86);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 20);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Username";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(54, 86);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 20);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Job";
             // 
-            // editUsernameTb
+            // jobTb
             // 
-            this.editUsernameTb.Location = new System.Drawing.Point(95, 83);
-            this.editUsernameTb.Name = "editUsernameTb";
-            this.editUsernameTb.Size = new System.Drawing.Size(202, 26);
-            this.editUsernameTb.TabIndex = 2;
+            this.jobTb.Location = new System.Drawing.Point(96, 83);
+            this.jobTb.Name = "jobTb";
+            this.jobTb.Size = new System.Drawing.Size(202, 26);
+            this.jobTb.TabIndex = 2;
             // 
-            // label11
+            // label13
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 119);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 20);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Password";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(54, 151);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 20);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Job";
             // 
-            // editPasswordTb
+            // editJob
             // 
-            this.editPasswordTb.Location = new System.Drawing.Point(95, 116);
-            this.editPasswordTb.Name = "editPasswordTb";
-            this.editPasswordTb.Size = new System.Drawing.Size(202, 26);
-            this.editPasswordTb.TabIndex = 3;
-            // 
-            // nameTimeKeepingLbl
-            // 
-            this.nameTimeKeepingLbl.BackColor = System.Drawing.Color.Transparent;
-            this.nameTimeKeepingLbl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.nameTimeKeepingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTimeKeepingLbl.Location = new System.Drawing.Point(0, 0);
-            this.nameTimeKeepingLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.nameTimeKeepingLbl.Name = "nameTimeKeepingLbl";
-            this.nameTimeKeepingLbl.Size = new System.Drawing.Size(558, 48);
-            this.nameTimeKeepingLbl.TabIndex = 20;
-            this.nameTimeKeepingLbl.Text = "<name>";
-            this.nameTimeKeepingLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.editJob.Location = new System.Drawing.Point(96, 148);
+            this.editJob.Name = "editJob";
+            this.editJob.Size = new System.Drawing.Size(202, 26);
+            this.editJob.TabIndex = 4;
             // 
             // EmployeeForm
             // 
@@ -485,6 +525,7 @@
             this.panel1.ResumeLayout(false);
             this.timeKeepingPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.timeKeepingDgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).EndInit();
             this.editEmployeePanel.ResumeLayout(false);
             this.editEmployeePanel.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -493,7 +534,6 @@
             this.addEmployeePanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -537,5 +577,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox editUsernameTb;
         private System.Windows.Forms.Label nameTimeKeepingLbl;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox jobTb;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox editJob;
     }
 }
