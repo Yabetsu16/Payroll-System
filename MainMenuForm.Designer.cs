@@ -64,6 +64,7 @@
             this.payrollBtn.TabIndex = 2;
             this.payrollBtn.Text = "Payroll";
             this.payrollBtn.UseVisualStyleBackColor = true;
+            this.payrollBtn.Click += new System.EventHandler(this.payrollBtn_Click);
             // 
             // summaryReportBtn
             // 

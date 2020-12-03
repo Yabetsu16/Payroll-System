@@ -95,6 +95,7 @@ namespace Payroll
             employeeDgv.Columns[3].HeaderText = "Username";
             employeeDgv.Columns[4].HeaderText = "Password";
             employeeDgv.Columns[5].HeaderText = "Type";
+            employeeDgv.Columns[6].HeaderText = "Job";
         }
 
         private void RefreshTimeKeepingDataGridView()
@@ -131,11 +132,12 @@ namespace Payroll
 
         private void addEmployeeBtn_Click(object sender, EventArgs e)
         {
-            if (firstnameTb.Text != "" || lastnameTb.Text != "" || typeComB.SelectedIndex != 0)
+            if (firstnameTb.Text != "" || lastnameTb.Text != "" || typeComB.SelectedIndex != 0 || jobTb.Text == "")
             {
                 employees.firstname = firstnameTb.Text;
                 employees.lastname = lastnameTb.Text;
                 employees.type = typeComB.Text;
+                employees.job = jobTb.Text;
 
                 employees.AddEmployee();
                 RemoveButtonDataGridView();
@@ -161,7 +163,7 @@ namespace Payroll
         {
             try
             {
-                if (e.ColumnIndex == 6)
+                if (e.ColumnIndex == 7)
                 {
                     id = (int)employeeDgv.Rows[e.RowIndex].Cells[0].Value;
                     editFirstnameTb.Text = employeeDgv.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -171,13 +173,14 @@ namespace Payroll
                     employees.currentUsername = employeeDgv.Rows[e.RowIndex].Cells[3].Value.ToString();
                     employees.currentPassword = employeeDgv.Rows[e.RowIndex].Cells[4].Value.ToString();
                     editTypeComB.SelectedItem = employeeDgv.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    editJob.Text = employeeDgv.Rows[e.RowIndex].Cells[6].Value.ToString();
                     OpenEditPanel();
                     Console.WriteLine("ID: " + id);
                     Console.WriteLine("Username: " + employees.currentUsername);
                     Console.WriteLine("Password: " + employees.currentPassword);
                 }
 
-                if (e.ColumnIndex == 7)
+                if (e.ColumnIndex == 8)
                 {
                     id = (int)employeeDgv.Rows[e.RowIndex].Cells[0].Value;
 
@@ -194,7 +197,7 @@ namespace Payroll
                     }
                 }
 
-                if (e.ColumnIndex == 8)
+                if (e.ColumnIndex == 9)
                 {
                     id = (int)employeeDgv.Rows[e.RowIndex].Cells[0].Value;
                     nameTimeKeepingLbl.Text = employeeDgv.Rows[e.RowIndex].Cells[1].Value + " "
@@ -222,6 +225,7 @@ namespace Payroll
             employees.username = editUsernameTb.Text;
             employees.password = editPasswordTb.Text;
             employees.type = editTypeComB.SelectedItem.ToString();
+            employees.job = editJob.Text;
             employees.EditEmployee();
             RemoveButtonDataGridView();
             RefreshEmployeeDataGridView();

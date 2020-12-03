@@ -10,7 +10,6 @@ namespace Payroll.Classes
 {
     class EmployeesClass : ConnectionClass
     {
-        UsersClass users = new UsersClass();
         public DataTable dataTable = new DataTable();
         public DataSet dataSet = new DataSet();
 
@@ -23,6 +22,8 @@ namespace Payroll.Classes
         public string lastname { set; get; }
 
         public string type { set; get; }
+
+        public string job { set; get; }
 
         public string username { set; get; }
 
@@ -46,7 +47,9 @@ namespace Payroll.Classes
             string query = "SELECT * FROM employee_tb WHERE " +
                 "employee_id LIKE '%" + search + "%' OR " +
                 "firstname LIKE '%" + search + "%' OR " +
-                "lastname LIKE '%" + search + "%' ";
+                "lastname LIKE '%" + search + "%' OR " +
+                "type LIKE '%" + search + "%' OR " +
+                "job LIKE '%" + search + "%'";
             dataTable.Clear();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, connectDb);
             adapter.Fill(dataSet);
@@ -57,8 +60,8 @@ namespace Payroll.Classes
         {
             Random rand = new Random();
             int randNum = rand.Next(1000, 9999);
-            string query = "INSERT INTO employee_tb (firstname, lastname, username, password, type) " +
-                "VALUES (@firstname, @lastname, @username, @password, @type);";
+            string query = "INSERT INTO employee_tb (firstname, lastname, username, password, type, job) " +
+                "VALUES (@firstname, @lastname, @username, @password, @type, @job);";
             query += "INSERT INTO user_tb (username, password, type) " +
                 "VALUES (@username, MD5(@password), 'EMPLOYEE')";
 
@@ -74,6 +77,29 @@ namespace Payroll.Classes
                 command.Parameters.Add("@username", MySqlDbType.VarChar).Value = lastname + "_" + firstname;
                 command.Parameters.Add("@password", MySqlDbType.VarChar).Value = lastname + "_" + randNum;
                 command.Parameters.Add("@type", MySqlDbType.VarChar).Value = type;
+                command.Parameters.Add("@job", MySqlDbType.VarChar).Value = job;
+
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+
+            string query2 = "INSERT INTO work_tb (emp_id) VALUES ((SELECT employee_id FROM employee_tb " +
+                "WHERE firstname = @firstname AND lastname = @lastname AND " +
+                "username = @username AND password = @password AND type = @type AND job = @job))";
+
+            using (var command = new MySqlCommand())
+            {
+                OpenConnection();
+                command.CommandText = query2;
+                command.CommandType = CommandType.Text;
+                command.Connection = connectDb;
+
+                command.Parameters.Add("@firstname", MySqlDbType.VarChar).Value = firstname;
+                command.Parameters.Add("@lastname", MySqlDbType.VarChar).Value = lastname;
+                command.Parameters.Add("@username", MySqlDbType.VarChar).Value = lastname + "_" + firstname;
+                command.Parameters.Add("@password", MySqlDbType.VarChar).Value = lastname + "_" + randNum;
+                command.Parameters.Add("@type", MySqlDbType.VarChar).Value = type;
+                command.Parameters.Add("@job", MySqlDbType.VarChar).Value = job;
 
                 command.ExecuteNonQuery();
                 CloseConnection();
@@ -85,7 +111,7 @@ namespace Payroll.Classes
             OpenConnection();
             string query = "UPDATE employee_tb SET firstname = @firstname, " +
                 "lastname = @lastname, username = @username, " +
-                "password = @password, type = @type WHERE employee_id = @id;";
+                "password = @password, type = @type, job = @job WHERE employee_id = @id;";
             query += "UPDATE user_tb SET username = @username, " +
                 "password = MD5(@password) WHERE username = @currentUsername AND password = MD5(@currentPassword)";
 
@@ -102,6 +128,7 @@ namespace Payroll.Classes
                 command.Parameters.Add("@currentUsername", MySqlDbType.VarChar).Value = currentUsername;
                 command.Parameters.Add("@currentPassword", MySqlDbType.VarChar).Value = currentPassword;
                 command.Parameters.Add("@type", MySqlDbType.VarChar).Value = type;
+                command.Parameters.Add("@job", MySqlDbType.VarChar).Value = job;
                 command.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
 
                 command.ExecuteNonQuery();
