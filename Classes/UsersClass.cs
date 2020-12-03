@@ -11,7 +11,6 @@ namespace Payroll.Classes
 {
     class UsersClass : ConnectionClass
     {
-        MySqlCommand command = new MySqlCommand();
         public string username { set; get; }
 
         public string password { set; get; }
@@ -30,7 +29,7 @@ namespace Payroll.Classes
 
             OpenConnection();
 
-            using (command)
+            using (var command = new MySqlCommand())
             {
                 command.CommandText = query;
                 command.CommandType = CommandType.Text;
@@ -45,6 +44,7 @@ namespace Payroll.Classes
                 while (reader.Read())
                 {
                     check = true;
+                    type = reader.GetString("type");
                     username = reader.GetString("username");
                     id = reader.GetInt32("user_id");
                 }
