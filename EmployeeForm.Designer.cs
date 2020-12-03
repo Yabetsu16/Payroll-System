@@ -29,9 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.employeeDgv = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.showAddPanelBtn = new System.Windows.Forms.Button();
+            this.editEmployeePanel = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.editFirstnameTb = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.editLastnameTb = new System.Windows.Forms.TextBox();
+            this.editTypeComB = new System.Windows.Forms.ComboBox();
+            this.closeUpdatePanelBtn = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.editEmployeeBtn = new System.Windows.Forms.Button();
             this.addEmployeePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.firstnameTb = new System.Windows.Forms.TextBox();
@@ -44,25 +52,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.addEmployeeBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
-            this.editEmployeePanel = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.editFirstnameTb = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.editLastnameTb = new System.Windows.Forms.TextBox();
-            this.editTypeComB = new System.Windows.Forms.ComboBox();
-            this.closeUpdatePanelBtn = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.editEmployeeBtn = new System.Windows.Forms.Button();
+            this.employeeDgv = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.showAddPanelBtn = new System.Windows.Forms.Button();
             this.searchTb = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
-            this.addEmployeePanel.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.editEmployeePanel.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.addEmployeePanel.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,39 +76,117 @@
             this.panel1.Size = new System.Drawing.Size(1283, 566);
             this.panel1.TabIndex = 2;
             // 
-            // employeeDgv
+            // editEmployeePanel
             // 
-            this.employeeDgv.AllowUserToAddRows = false;
-            this.employeeDgv.AllowUserToDeleteRows = false;
-            this.employeeDgv.BackgroundColor = System.Drawing.Color.White;
-            this.employeeDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.employeeDgv.Location = new System.Drawing.Point(0, 0);
-            this.employeeDgv.Name = "employeeDgv";
-            this.employeeDgv.ReadOnly = true;
-            this.employeeDgv.Size = new System.Drawing.Size(1283, 566);
-            this.employeeDgv.TabIndex = 0;
-            this.employeeDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDgv_CellContentClick);
+            this.editEmployeePanel.Controls.Add(this.panel4);
+            this.editEmployeePanel.Controls.Add(this.closeUpdatePanelBtn);
+            this.editEmployeePanel.Controls.Add(this.label9);
+            this.editEmployeePanel.Controls.Add(this.editEmployeeBtn);
+            this.editEmployeePanel.Location = new System.Drawing.Point(969, 1);
+            this.editEmployeePanel.Name = "editEmployeePanel";
+            this.editEmployeePanel.Size = new System.Drawing.Size(315, 566);
+            this.editEmployeePanel.TabIndex = 19;
             // 
-            // label1
+            // panel4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Search Employee";
+            this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.editFirstnameTb);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.editLastnameTb);
+            this.panel4.Controls.Add(this.editTypeComB);
+            this.panel4.Location = new System.Drawing.Point(3, 45);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(309, 468);
+            this.panel4.TabIndex = 18;
             // 
-            // showAddPanelBtn
+            // editFirstnameTb
             // 
-            this.showAddPanelBtn.Location = new System.Drawing.Point(1194, 12);
-            this.showAddPanelBtn.Name = "showAddPanelBtn";
-            this.showAddPanelBtn.Size = new System.Drawing.Size(75, 36);
-            this.showAddPanelBtn.TabIndex = 4;
-            this.showAddPanelBtn.Text = "Add";
-            this.showAddPanelBtn.UseVisualStyleBackColor = true;
-            this.showAddPanelBtn.Click += new System.EventHandler(this.showAddPanelBtn_Click);
+            this.editFirstnameTb.Location = new System.Drawing.Point(96, 19);
+            this.editFirstnameTb.Name = "editFirstnameTb";
+            this.editFirstnameTb.Size = new System.Drawing.Size(202, 26);
+            this.editFirstnameTb.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(10, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Firstname";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(10, 54);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 20);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Lastname";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(47, 86);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 20);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Type";
+            // 
+            // editLastnameTb
+            // 
+            this.editLastnameTb.Location = new System.Drawing.Point(96, 51);
+            this.editLastnameTb.Name = "editLastnameTb";
+            this.editLastnameTb.Size = new System.Drawing.Size(202, 26);
+            this.editLastnameTb.TabIndex = 12;
+            // 
+            // editTypeComB
+            // 
+            this.editTypeComB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.editTypeComB.FormattingEnabled = true;
+            this.editTypeComB.Items.AddRange(new object[] {
+            "",
+            "Regular",
+            "Contractual",
+            "Part-Time",
+            "Consultant"});
+            this.editTypeComB.Location = new System.Drawing.Point(96, 83);
+            this.editTypeComB.Name = "editTypeComB";
+            this.editTypeComB.Size = new System.Drawing.Size(202, 28);
+            this.editTypeComB.TabIndex = 13;
+            // 
+            // closeUpdatePanelBtn
+            // 
+            this.closeUpdatePanelBtn.Location = new System.Drawing.Point(39, 522);
+            this.closeUpdatePanelBtn.Name = "closeUpdatePanelBtn";
+            this.closeUpdatePanelBtn.Size = new System.Drawing.Size(75, 35);
+            this.closeUpdatePanelBtn.TabIndex = 17;
+            this.closeUpdatePanelBtn.Text = "Close";
+            this.closeUpdatePanelBtn.UseVisualStyleBackColor = true;
+            this.closeUpdatePanelBtn.Click += new System.EventHandler(this.closeUpdatePanelBtn_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(66, 11);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(201, 31);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Edit Employee";
+            // 
+            // editEmployeeBtn
+            // 
+            this.editEmployeeBtn.Location = new System.Drawing.Point(201, 522);
+            this.editEmployeeBtn.Name = "editEmployeeBtn";
+            this.editEmployeeBtn.Size = new System.Drawing.Size(75, 35);
+            this.editEmployeeBtn.TabIndex = 15;
+            this.editEmployeeBtn.Text = "Edit";
+            this.editEmployeeBtn.UseVisualStyleBackColor = true;
+            this.editEmployeeBtn.Click += new System.EventHandler(this.editEmployeeBtn_Click);
             // 
             // addEmployeePanel
             // 
@@ -234,117 +312,39 @@
             this.clearBtn.UseVisualStyleBackColor = true;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
-            // editEmployeePanel
+            // employeeDgv
             // 
-            this.editEmployeePanel.Controls.Add(this.panel4);
-            this.editEmployeePanel.Controls.Add(this.closeUpdatePanelBtn);
-            this.editEmployeePanel.Controls.Add(this.label9);
-            this.editEmployeePanel.Controls.Add(this.editEmployeeBtn);
-            this.editEmployeePanel.Location = new System.Drawing.Point(969, 1);
-            this.editEmployeePanel.Name = "editEmployeePanel";
-            this.editEmployeePanel.Size = new System.Drawing.Size(315, 566);
-            this.editEmployeePanel.TabIndex = 19;
+            this.employeeDgv.AllowUserToAddRows = false;
+            this.employeeDgv.AllowUserToDeleteRows = false;
+            this.employeeDgv.BackgroundColor = System.Drawing.Color.White;
+            this.employeeDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeDgv.Location = new System.Drawing.Point(0, 0);
+            this.employeeDgv.Name = "employeeDgv";
+            this.employeeDgv.ReadOnly = true;
+            this.employeeDgv.Size = new System.Drawing.Size(1283, 566);
+            this.employeeDgv.TabIndex = 0;
+            this.employeeDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDgv_CellContentClick);
             // 
-            // panel4
+            // label1
             // 
-            this.panel4.AutoScroll = true;
-            this.panel4.Controls.Add(this.editFirstnameTb);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.editLastnameTb);
-            this.panel4.Controls.Add(this.editTypeComB);
-            this.panel4.Location = new System.Drawing.Point(3, 45);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(309, 468);
-            this.panel4.TabIndex = 18;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Search Employee";
             // 
-            // editFirstnameTb
+            // showAddPanelBtn
             // 
-            this.editFirstnameTb.Location = new System.Drawing.Point(96, 19);
-            this.editFirstnameTb.Name = "editFirstnameTb";
-            this.editFirstnameTb.Size = new System.Drawing.Size(202, 26);
-            this.editFirstnameTb.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Firstname";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 54);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 20);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Lastname";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(47, 86);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 20);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Type";
-            // 
-            // editLastnameTb
-            // 
-            this.editLastnameTb.Location = new System.Drawing.Point(96, 51);
-            this.editLastnameTb.Name = "editLastnameTb";
-            this.editLastnameTb.Size = new System.Drawing.Size(202, 26);
-            this.editLastnameTb.TabIndex = 12;
-            // 
-            // editTypeComB
-            // 
-            this.editTypeComB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.editTypeComB.FormattingEnabled = true;
-            this.editTypeComB.Items.AddRange(new object[] {
-            "",
-            "Regular",
-            "Contractual",
-            "Part-Time",
-            "Consultant"});
-            this.editTypeComB.Location = new System.Drawing.Point(96, 83);
-            this.editTypeComB.Name = "editTypeComB";
-            this.editTypeComB.Size = new System.Drawing.Size(202, 28);
-            this.editTypeComB.TabIndex = 13;
-            // 
-            // closeUpdatePanelBtn
-            // 
-            this.closeUpdatePanelBtn.Location = new System.Drawing.Point(39, 522);
-            this.closeUpdatePanelBtn.Name = "closeUpdatePanelBtn";
-            this.closeUpdatePanelBtn.Size = new System.Drawing.Size(75, 35);
-            this.closeUpdatePanelBtn.TabIndex = 17;
-            this.closeUpdatePanelBtn.Text = "Close";
-            this.closeUpdatePanelBtn.UseVisualStyleBackColor = true;
-            this.closeUpdatePanelBtn.Click += new System.EventHandler(this.closeUpdatePanelBtn_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(66, 11);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(201, 31);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Edit Employee";
-            // 
-            // editEmployeeBtn
-            // 
-            this.editEmployeeBtn.Location = new System.Drawing.Point(201, 522);
-            this.editEmployeeBtn.Name = "editEmployeeBtn";
-            this.editEmployeeBtn.Size = new System.Drawing.Size(75, 35);
-            this.editEmployeeBtn.TabIndex = 15;
-            this.editEmployeeBtn.Text = "Edit";
-            this.editEmployeeBtn.UseVisualStyleBackColor = true;
-            this.editEmployeeBtn.Click += new System.EventHandler(this.editEmployeeBtn_Click);
+            this.showAddPanelBtn.Location = new System.Drawing.Point(1194, 12);
+            this.showAddPanelBtn.Name = "showAddPanelBtn";
+            this.showAddPanelBtn.Size = new System.Drawing.Size(75, 36);
+            this.showAddPanelBtn.TabIndex = 4;
+            this.showAddPanelBtn.Text = "Add";
+            this.showAddPanelBtn.UseVisualStyleBackColor = true;
+            this.showAddPanelBtn.Click += new System.EventHandler(this.showAddPanelBtn_Click);
             // 
             // searchTb
             // 
@@ -382,15 +382,15 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EmployeeForm_FormClosed);
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).EndInit();
-            this.addEmployeePanel.ResumeLayout(false);
-            this.addEmployeePanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.editEmployeePanel.ResumeLayout(false);
             this.editEmployeePanel.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.addEmployeePanel.ResumeLayout(false);
+            this.addEmployeePanel.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

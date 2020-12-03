@@ -147,13 +147,24 @@ namespace Payroll
 
                 if (e.ColumnIndex == 5)
                 {
-                    Console.WriteLine("Remove Clicked");
+                    id = (int)employeeDgv.Rows[e.RowIndex].Cells[0].Value;
+
+                    DialogResult result = MessageBox.Show("Are you sure?",
+                        "Remove " + employeeDgv.Rows[e.RowIndex].Cells[2].Value, MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        employees.id = id;
+                        employees.RemoveEmployee();
+                        RemoveButtonDataGridView();
+                        RefreshDataGridView();
+                        CreateButtonDataGridView();
+                    }
                 }
             }
-            catch (Exception)
+            catch
             {
-
-                throw;
+                MessageBox.Show("Please don't click the header");
             }
         }
 
