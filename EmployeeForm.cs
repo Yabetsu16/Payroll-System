@@ -14,6 +14,7 @@ namespace Payroll
     public partial class EmployeeForm : Form
     {
         EmployeesClass employees = new EmployeesClass();
+        public int id;
 
         public EmployeeForm()
         {
@@ -28,6 +29,39 @@ namespace Payroll
         private void CloseAddPanel()
         {
             addEmployeePanel.Visible = false;
+        }
+
+        private void OpenEditPanel()
+        {
+            editEmployeePanel.Visible = true;
+        }
+
+        private void CloseEditPanel()
+        {
+            editEmployeePanel.Visible = false;
+        }
+
+        private void CreateButtonDataGridView()
+        {
+            DataGridViewButtonColumn editDgvBtn = new DataGridViewButtonColumn();
+            editDgvBtn.HeaderText = "Edit";
+            editDgvBtn.Text = "Edit";
+            editDgvBtn.Name = "editDgvBtn";
+            editDgvBtn.UseColumnTextForButtonValue = true;
+            employeeDgv.Columns.Add(editDgvBtn);
+
+            DataGridViewButtonColumn removeDgvBtn = new DataGridViewButtonColumn();
+            removeDgvBtn.HeaderText = "Remove";
+            removeDgvBtn.Text = "Remove";
+            removeDgvBtn.Name = "removeDgvBtn";
+            removeDgvBtn.UseColumnTextForButtonValue = true;
+            employeeDgv.Columns.Add(removeDgvBtn);
+        }
+
+        private void RemoveButtonDataGridView()
+        {
+            employeeDgv.Columns.Remove("editDgvBtn");
+            employeeDgv.Columns.Remove("removeDgvBtn");
         }
 
         public void RefreshDataGridView()
@@ -51,7 +85,9 @@ namespace Payroll
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
             RefreshDataGridView();
-            addEmployeePanel.Visible = false;
+            CreateButtonDataGridView();
+            CloseAddPanel();
+            CloseEditPanel();
         }
 
         private void showAddPanelBtn_Click(object sender, EventArgs e)
@@ -68,7 +104,9 @@ namespace Payroll
                 employees.type = typeComB.Text;
 
                 employees.AddEmployee();
+                RemoveButtonDataGridView();
                 RefreshDataGridView();
+                CreateButtonDataGridView();
                 CloseAddPanel();
             }
         }
@@ -83,6 +121,55 @@ namespace Payroll
             firstnameTb.Clear();
             lastnameTb.Clear();
             typeComB.SelectedIndex = 0;
+        }
+
+        private void employeeDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 4)
+                {
+                    id = (int)employeeDgv.Rows[e.RowIndex].Cells[0].Value;
+                    editFirstnameTb.Text = employeeDgv.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    editLastnameTb.Text = employeeDgv.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    editTypeComB.SelectedItem = employeeDgv.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    OpenEditPanel();
+                    Console.WriteLine("ID: " + id);
+                }
+
+                if (e.ColumnIndex == 5)
+                {
+                    Console.WriteLine("Remove Clicked");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void closeUpdatePanelBtn_Click(object sender, EventArgs e)
+        {
+            CloseEditPanel();
+        }
+
+        private void editEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            employees.id = id;
+            employees.firstname = editFirstnameTb.Text;
+            employees.lastname = editLastnameTb.Text;
+            employees.type = editTypeComB.SelectedItem.ToString();
+            employees.EditEmployee();
+            RemoveButtonDataGridView();
+            RefreshDataGridView();
+            CreateButtonDataGridView();
+            CloseEditPanel();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            employees.SearchEmployees(searchTb.Text);
         }
     }
 }
