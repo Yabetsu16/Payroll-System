@@ -56,12 +56,20 @@ namespace Payroll
             removeDgvBtn.Name = "removeDgvBtn";
             removeDgvBtn.UseColumnTextForButtonValue = true;
             employeeDgv.Columns.Add(removeDgvBtn);
+
+            DataGridViewButtonColumn timeKeepingDgvBtn = new DataGridViewButtonColumn();
+            timeKeepingDgvBtn.HeaderText = "Time Keeping";
+            timeKeepingDgvBtn.Text = "View";
+            timeKeepingDgvBtn.Name = "timeKeepingDgvBtn";
+            timeKeepingDgvBtn.UseColumnTextForButtonValue = true;
+            employeeDgv.Columns.Add(timeKeepingDgvBtn);
         }
 
         private void RemoveButtonDataGridView()
         {
             employeeDgv.Columns.Remove("editDgvBtn");
             employeeDgv.Columns.Remove("removeDgvBtn");
+            employeeDgv.Columns.Remove("timeKeepingDgvBtn");
         }
 
         public void RefreshDataGridView()
