@@ -201,7 +201,7 @@
             this.groupBox1.Controls.Add(this.taxNum);
             this.groupBox1.Location = new System.Drawing.Point(3, 240);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 375);
+            this.groupBox1.Size = new System.Drawing.Size(277, 377);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Deductions";
@@ -258,7 +258,7 @@
             this.deductionRemarksTb.Location = new System.Drawing.Point(6, 279);
             this.deductionRemarksTb.Multiline = true;
             this.deductionRemarksTb.Name = "deductionRemarksTb";
-            this.deductionRemarksTb.Size = new System.Drawing.Size(265, 103);
+            this.deductionRemarksTb.Size = new System.Drawing.Size(265, 90);
             this.deductionRemarksTb.TabIndex = 19;
             // 
             // label11

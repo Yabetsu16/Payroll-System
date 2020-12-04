@@ -14,7 +14,7 @@ namespace Payroll
     public partial class EmployeeForm : Form
     {
         EmployeesClass employees = new EmployeesClass();
-        UsersClass users = new UsersClass();
+        ReportingClass reporting = new ReportingClass();
         TimeKeepingClass timeKeeping = new TimeKeepingClass();
         public int id;
 
@@ -51,6 +51,14 @@ namespace Payroll
         private void CloseTimeKeepingPanel()
         {
             timeKeepingPanel.Visible = false;
+        }
+
+        private void ClearTextBox()
+        {
+            firstnameTb.Clear();
+            lastnameTb.Clear();
+            jobTb.Clear();
+            typeComB.SelectedIndex = 0;
         }
 
         private void CreateButtonDataGridView()
@@ -138,12 +146,14 @@ namespace Payroll
                 employees.lastname = lastnameTb.Text;
                 employees.type = typeComB.Text;
                 employees.job = jobTb.Text;
-
                 employees.AddEmployee();
+                employees.GetId();
+                reporting.AddEmployeeReport(employees.id);
                 RemoveButtonDataGridView();
                 RefreshEmployeeDataGridView();
                 CreateButtonDataGridView();
                 CloseAddPanel();
+                ClearTextBox();
             }
         }
 
@@ -154,9 +164,7 @@ namespace Payroll
 
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            firstnameTb.Clear();
-            lastnameTb.Clear();
-            typeComB.SelectedIndex = 0;
+            ClearTextBox();
         }
 
         private void employeeDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -191,6 +199,7 @@ namespace Payroll
                     {
                         employees.id = id;
                         employees.RemoveEmployee();
+                        reporting.DeleteEmployeeReport(employees.id);
                         RemoveButtonDataGridView();
                         RefreshEmployeeDataGridView();
                         CreateButtonDataGridView();
@@ -227,6 +236,7 @@ namespace Payroll
             employees.type = editTypeComB.SelectedItem.ToString();
             employees.job = editJob.Text;
             employees.EditEmployee();
+            reporting.UpdateEmployeeReport(employees.id);
             RemoveButtonDataGridView();
             RefreshEmployeeDataGridView();
             CreateButtonDataGridView();

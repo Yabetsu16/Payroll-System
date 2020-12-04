@@ -14,6 +14,7 @@ namespace Payroll
     public partial class PayrollForm : Form
     {
         WorkClass work = new WorkClass();
+        ReportingClass reporting = new ReportingClass();
         public int workId;
         public int employeeId;
         public decimal totalDeductions = 0;
@@ -363,9 +364,11 @@ namespace Payroll
             work.deductions = (float)otherDeductionNum.Value;
             work.deductionRemarks = deductionRemarksTb.Text;
             work.EditWork();
+            reporting.UpdateWorkReport(employeeId);
             RemoveDataGridViewButton();
             CreateDataGridViewButton();
             RefreshDataGridView();
+            CloseEditPanel();
         }
 
         private void otherDeductionNum_ValueChanged(object sender, EventArgs e)

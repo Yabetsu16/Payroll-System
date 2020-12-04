@@ -33,9 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,9 +56,16 @@
   <ItemGroup>
     <Compile Include="Classes\ConnectionClass.cs" />
     <Compile Include="Classes\EmployeesClass.cs" />
+    <Compile Include="Classes\ReportingClass.cs" />
     <Compile Include="Classes\TimeKeepingClass.cs" />
     <Compile Include="Classes\UsersClass.cs" />
     <Compile Include="Classes\WorkClass.cs" />
+    <Compile Include="MonthlyPayrollReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonthlyPayrollReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,14 +90,29 @@
     <Compile Include="PayrollForm.Designer.cs">
       <DependentUpon>PayrollForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="payroll_systemDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>payroll_systemDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SummaryReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SummaryReportForm.Designer.cs">
+      <DependentUpon>SummaryReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TimeKeepingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TimeKeepingForm.Designer.cs">
       <DependentUpon>TimeKeepingForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MonthlyPayrollReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MonthlyPayrollReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,9 +135,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SummaryReportForm.resx">
+      <DependentUpon>SummaryReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TimeKeepingForm.resx">
       <DependentUpon>TimeKeepingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="payroll_systemDataSet1.xsc">
+      <DependentUpon>payroll_systemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="payroll_systemDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>payroll_systemDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="payroll_systemDataSet1.xss">
+      <DependentUpon>payroll_systemDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -124,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

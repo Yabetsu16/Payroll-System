@@ -56,6 +56,33 @@ namespace Payroll.Classes
             dataTable = dataSet.Tables[0];
         }
 
+        public void GetId()
+        {
+            string query = "SELECT employee_id FROM employee_tb " +
+                "WHERE firstname = @firstname AND lastname = @lastname";
+
+            MySqlDataReader reader;
+
+            using (var command = new MySqlCommand())
+            {
+                OpenConnection();
+                command.CommandText = query;
+                command.CommandType = CommandType.Text;
+                command.Connection = connectDb;
+                command.Parameters.Add("@firstname", MySqlDbType.VarChar).Value = firstname;
+                command.Parameters.Add("@lastname", MySqlDbType.VarChar).Value = lastname;
+
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    id = (int)reader[0];
+                }
+
+                CloseConnection();
+            }
+        }
+
         public void AddEmployee()
         {
             Random rand = new Random();
