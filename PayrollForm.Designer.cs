@@ -33,8 +33,8 @@
             this.paySlipNum = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.thirtiethMonthRb = new System.Windows.Forms.RadioButton();
-            this.fifteenthMonthRb = new System.Windows.Forms.RadioButton();
+            this.thirtiethRb = new System.Windows.Forms.RadioButton();
+            this.fifteenthRb = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.totalDeductionLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,7 +66,6 @@
             this.workDgv = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.searchTb = new System.Windows.Forms.TextBox();
-            this.searchBtn = new System.Windows.Forms.Button();
             this.editWorkPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paySlipNum)).BeginInit();
@@ -102,8 +101,8 @@
             this.panel1.Controls.Add(this.paySlipNum);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.thirtiethMonthRb);
-            this.panel1.Controls.Add(this.fifteenthMonthRb);
+            this.panel1.Controls.Add(this.thirtiethRb);
+            this.panel1.Controls.Add(this.fifteenthRb);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.dayNum);
             this.panel1.Controls.Add(this.label5);
@@ -127,7 +126,7 @@
             0,
             0,
             0});
-            this.paySlipNum.Location = new System.Drawing.Point(133, 205);
+            this.paySlipNum.Location = new System.Drawing.Point(133, 208);
             this.paySlipNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -142,44 +141,45 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(23, 207);
+            this.label15.Location = new System.Drawing.Point(62, 210);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(104, 20);
+            this.label15.Size = new System.Drawing.Size(65, 20);
             this.label15.TabIndex = 23;
-            this.label15.Text = "Total Pay Slip";
+            this.label15.Text = "Pay Slip";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(21, 152);
+            this.label14.Location = new System.Drawing.Point(52, 150);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(151, 20);
+            this.label14.Size = new System.Drawing.Size(102, 20);
             this.label14.TabIndex = 17;
-            this.label14.Text = "Frequency of payroll";
+            this.label14.Text = "Cut-of Period";
             // 
-            // thirtiethMonthRb
+            // thirtiethRb
             // 
-            this.thirtiethMonthRb.AutoSize = true;
-            this.thirtiethMonthRb.Location = new System.Drawing.Point(176, 175);
-            this.thirtiethMonthRb.Name = "thirtiethMonthRb";
-            this.thirtiethMonthRb.Size = new System.Drawing.Size(59, 24);
-            this.thirtiethMonthRb.TabIndex = 16;
-            this.thirtiethMonthRb.TabStop = true;
-            this.thirtiethMonthRb.Text = "30th";
-            this.thirtiethMonthRb.UseVisualStyleBackColor = true;
-            this.thirtiethMonthRb.CheckedChanged += new System.EventHandler(this.thirtiethMonthRb_CheckedChanged);
+            this.thirtiethRb.AutoSize = true;
+            this.thirtiethRb.Location = new System.Drawing.Point(160, 178);
+            this.thirtiethRb.Name = "thirtiethRb";
+            this.thirtiethRb.Size = new System.Drawing.Size(59, 24);
+            this.thirtiethRb.TabIndex = 16;
+            this.thirtiethRb.TabStop = true;
+            this.thirtiethRb.Text = "30th";
+            this.thirtiethRb.UseVisualStyleBackColor = true;
+            this.thirtiethRb.CheckedChanged += new System.EventHandler(this.thirtiethMonthRb_CheckedChanged);
             // 
-            // fifteenthMonthRb
+            // fifteenthRb
             // 
-            this.fifteenthMonthRb.AutoSize = true;
-            this.fifteenthMonthRb.Location = new System.Drawing.Point(53, 175);
-            this.fifteenthMonthRb.Name = "fifteenthMonthRb";
-            this.fifteenthMonthRb.Size = new System.Drawing.Size(59, 24);
-            this.fifteenthMonthRb.TabIndex = 15;
-            this.fifteenthMonthRb.TabStop = true;
-            this.fifteenthMonthRb.Text = "15th";
-            this.fifteenthMonthRb.UseVisualStyleBackColor = true;
-            this.fifteenthMonthRb.CheckedChanged += new System.EventHandler(this.fifteenthMonthRb_CheckedChanged);
+            this.fifteenthRb.AutoSize = true;
+            this.fifteenthRb.Checked = true;
+            this.fifteenthRb.Location = new System.Drawing.Point(160, 148);
+            this.fifteenthRb.Name = "fifteenthRb";
+            this.fifteenthRb.Size = new System.Drawing.Size(59, 24);
+            this.fifteenthRb.TabIndex = 15;
+            this.fifteenthRb.TabStop = true;
+            this.fifteenthRb.Text = "15th";
+            this.fifteenthRb.UseVisualStyleBackColor = true;
+            this.fifteenthRb.CheckedChanged += new System.EventHandler(this.fifteenthMonthRb_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -199,9 +199,9 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.taxNum);
-            this.groupBox1.Location = new System.Drawing.Point(5, 237);
+            this.groupBox1.Location = new System.Drawing.Point(3, 240);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 398);
+            this.groupBox1.Size = new System.Drawing.Size(277, 375);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Deductions";
@@ -209,7 +209,7 @@
             // totalDeductionLbl
             // 
             this.totalDeductionLbl.AutoSize = true;
-            this.totalDeductionLbl.Location = new System.Drawing.Point(137, 38);
+            this.totalDeductionLbl.Location = new System.Drawing.Point(139, 32);
             this.totalDeductionLbl.Name = "totalDeductionLbl";
             this.totalDeductionLbl.Size = new System.Drawing.Size(40, 20);
             this.totalDeductionLbl.TabIndex = 26;
@@ -218,7 +218,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 38);
+            this.label1.Location = new System.Drawing.Point(8, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 20);
             this.label1.TabIndex = 25;
@@ -232,7 +232,7 @@
             0,
             0,
             0});
-            this.loanNum.Location = new System.Drawing.Point(155, 202);
+            this.loanNum.Location = new System.Drawing.Point(155, 183);
             this.loanNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -242,11 +242,12 @@
             this.loanNum.Size = new System.Drawing.Size(116, 26);
             this.loanNum.TabIndex = 21;
             this.loanNum.ThousandsSeparator = true;
+            this.loanNum.ValueChanged += new System.EventHandler(this.loanNum_ValueChanged);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(104, 204);
+            this.label13.Location = new System.Drawing.Point(104, 185);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(45, 20);
             this.label13.TabIndex = 20;
@@ -254,16 +255,16 @@
             // 
             // deductionRemarksTb
             // 
-            this.deductionRemarksTb.Location = new System.Drawing.Point(6, 286);
+            this.deductionRemarksTb.Location = new System.Drawing.Point(6, 279);
             this.deductionRemarksTb.Multiline = true;
             this.deductionRemarksTb.Name = "deductionRemarksTb";
-            this.deductionRemarksTb.Size = new System.Drawing.Size(265, 106);
+            this.deductionRemarksTb.Size = new System.Drawing.Size(265, 103);
             this.deductionRemarksTb.TabIndex = 19;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 263);
+            this.label11.Location = new System.Drawing.Point(6, 256);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 20);
             this.label11.TabIndex = 18;
@@ -277,7 +278,7 @@
             0,
             0,
             0});
-            this.otherDeductionNum.Location = new System.Drawing.Point(155, 234);
+            this.otherDeductionNum.Location = new System.Drawing.Point(155, 215);
             this.otherDeductionNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -287,11 +288,12 @@
             this.otherDeductionNum.Size = new System.Drawing.Size(116, 26);
             this.otherDeductionNum.TabIndex = 17;
             this.otherDeductionNum.ThousandsSeparator = true;
+            this.otherDeductionNum.ValueChanged += new System.EventHandler(this.otherDeductionNum_ValueChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 236);
+            this.label10.Location = new System.Drawing.Point(23, 217);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(126, 20);
             this.label10.TabIndex = 16;
@@ -306,7 +308,7 @@
             0,
             0,
             0});
-            this.philhealthNum.Location = new System.Drawing.Point(155, 170);
+            this.philhealthNum.Location = new System.Drawing.Point(155, 151);
             this.philhealthNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -321,7 +323,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(88, 140);
+            this.label8.Location = new System.Drawing.Point(88, 121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 20);
             this.label8.TabIndex = 12;
@@ -330,7 +332,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(71, 172);
+            this.label9.Location = new System.Drawing.Point(71, 153);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 20);
             this.label9.TabIndex = 14;
@@ -345,7 +347,7 @@
             0,
             0,
             0});
-            this.pagibigNum.Location = new System.Drawing.Point(155, 138);
+            this.pagibigNum.Location = new System.Drawing.Point(155, 119);
             this.pagibigNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -366,7 +368,7 @@
             0,
             0,
             0});
-            this.sssNum.Location = new System.Drawing.Point(155, 106);
+            this.sssNum.Location = new System.Drawing.Point(155, 87);
             this.sssNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -381,7 +383,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(115, 76);
+            this.label6.Location = new System.Drawing.Point(115, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 20);
             this.label6.TabIndex = 8;
@@ -390,7 +392,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(107, 108);
+            this.label7.Location = new System.Drawing.Point(107, 89);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 20);
             this.label7.TabIndex = 10;
@@ -405,7 +407,7 @@
             0,
             0,
             0});
-            this.taxNum.Location = new System.Drawing.Point(155, 74);
+            this.taxNum.Location = new System.Drawing.Point(155, 55);
             this.taxNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -572,24 +574,15 @@
             this.searchTb.Name = "searchTb";
             this.searchTb.Size = new System.Drawing.Size(467, 26);
             this.searchTb.TabIndex = 21;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.Location = new System.Drawing.Point(625, 5);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(75, 35);
-            this.searchBtn.TabIndex = 6;
-            this.searchBtn.Text = "Search";
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            this.searchTb.TextChanged += new System.EventHandler(this.searchTb_TextChanged);
             // 
             // PayrollForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1283, 624);
             this.Controls.Add(this.editWorkPanel);
-            this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.searchTb);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.workDgv);
@@ -656,11 +649,10 @@
         private System.Windows.Forms.DataGridView workDgv;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox searchTb;
-        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.NumericUpDown loanNum;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RadioButton thirtiethMonthRb;
-        private System.Windows.Forms.RadioButton fifteenthMonthRb;
+        private System.Windows.Forms.RadioButton thirtiethRb;
+        private System.Windows.Forms.RadioButton fifteenthRb;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.NumericUpDown paySlipNum;
         private System.Windows.Forms.Label label15;

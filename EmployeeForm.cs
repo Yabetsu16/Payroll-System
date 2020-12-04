@@ -233,11 +233,6 @@ namespace Payroll
             CloseEditPanel();
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
-        {
-            employees.SearchEmployees(searchTb.Text);
-        }
-
         private void closeTimeKeepingBtn_Click(object sender, EventArgs e)
         {
             CloseTimeKeepingPanel();
@@ -249,6 +244,11 @@ namespace Payroll
             {
                 RefreshTimeKeepingDataGridView();
             }
+        }
+
+        private void searchTb_TextChanged(object sender, EventArgs e)
+        {
+            employees.SearchEmployees(searchTb.Text);
         }
     }
 }

@@ -36,6 +36,8 @@
             this.employeeDgv = new System.Windows.Forms.DataGridView();
             this.editEmployeePanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.editJob = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.editPasswordTb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -51,6 +53,8 @@
             this.editEmployeeBtn = new System.Windows.Forms.Button();
             this.addEmployeePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.jobTb = new System.Windows.Forms.TextBox();
             this.firstnameTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,11 +68,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.showAddPanelBtn = new System.Windows.Forms.Button();
             this.searchTb = new System.Windows.Forms.TextBox();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.jobTb = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.editJob = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.timeKeepingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeKeepingDgv)).BeginInit();
@@ -184,6 +183,22 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(309, 468);
             this.panel4.TabIndex = 18;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(54, 151);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 20);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Job";
+            // 
+            // editJob
+            // 
+            this.editJob.Location = new System.Drawing.Point(96, 148);
+            this.editJob.Name = "editJob";
+            this.editJob.Size = new System.Drawing.Size(202, 26);
+            this.editJob.TabIndex = 4;
             // 
             // label11
             // 
@@ -334,6 +349,22 @@
             this.panel2.Size = new System.Drawing.Size(309, 468);
             this.panel2.TabIndex = 18;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(54, 86);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 20);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Job";
+            // 
+            // jobTb
+            // 
+            this.jobTb.Location = new System.Drawing.Point(96, 83);
+            this.jobTb.Name = "jobTb";
+            this.jobTb.Size = new System.Drawing.Size(202, 26);
+            this.jobTb.TabIndex = 2;
+            // 
             // firstnameTb
             // 
             this.firstnameTb.Location = new System.Drawing.Point(96, 19);
@@ -457,48 +488,7 @@
             this.searchTb.Name = "searchTb";
             this.searchTb.Size = new System.Drawing.Size(448, 26);
             this.searchTb.TabIndex = 0;
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.Location = new System.Drawing.Point(606, 15);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(75, 31);
-            this.searchBtn.TabIndex = 1;
-            this.searchBtn.Text = "Search";
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(54, 86);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 20);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Job";
-            // 
-            // jobTb
-            // 
-            this.jobTb.Location = new System.Drawing.Point(96, 83);
-            this.jobTb.Name = "jobTb";
-            this.jobTb.Size = new System.Drawing.Size(202, 26);
-            this.jobTb.TabIndex = 2;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(54, 151);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 20);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Job";
-            // 
-            // editJob
-            // 
-            this.editJob.Location = new System.Drawing.Point(96, 148);
-            this.editJob.Name = "editJob";
-            this.editJob.Size = new System.Drawing.Size(202, 26);
-            this.editJob.TabIndex = 4;
+            this.searchTb.TextChanged += new System.EventHandler(this.searchTb_TextChanged);
             // 
             // EmployeeForm
             // 
@@ -508,7 +498,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1283, 624);
             this.Controls.Add(this.addEmployeePanel);
-            this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.editEmployeePanel);
             this.Controls.Add(this.searchTb);
             this.Controls.Add(this.showAddPanelBtn);
@@ -568,7 +557,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button editEmployeeBtn;
         private System.Windows.Forms.TextBox searchTb;
-        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Panel timeKeepingPanel;
         private System.Windows.Forms.Button closeTimeKeepingBtn;
         private System.Windows.Forms.DataGridView timeKeepingDgv;
