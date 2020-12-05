@@ -60,6 +60,12 @@
     <Compile Include="Classes\TimeKeepingClass.cs" />
     <Compile Include="Classes\UsersClass.cs" />
     <Compile Include="Classes\WorkClass.cs" />
+    <Compile Include="AnnualPayrollReport.cs">
+      <DependentUpon>AnnualPayrollReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="MonthlyPayrollReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +115,10 @@
     <Compile Include="TimeKeepingForm.Designer.cs">
       <DependentUpon>TimeKeepingForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AnnualPayrollReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AnnualPayrollReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MonthlyPayrollReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MonthlyPayrollReport.cs</LastGenOutput>

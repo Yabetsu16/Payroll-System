@@ -105,27 +105,67 @@ namespace Payroll.Classes
             }
         }
 
-        public void ShowReport()
+        public void ShowMonthlyReport()
         {
-            string query = "SELECT * FROM report_tb";
+            string query = "SELECT report_id, employee_id, name, type, job, " +
+                "gross_salary, total_deductions, tax, sss, " +
+                "pagibig, philhealth, loans, deductions, net_salary " +
+                "FROM report_tb";
             try
             {
                 OpenConnection();
-                MySqlCommand cmd = new MySqlCommand();
-                MySqlDataAdapter da = new MySqlDataAdapter();
-
-                cmd.Connection = connectDb;
-                cmd.CommandText = query;
-                da.SelectCommand = cmd;
-                da.Fill(dataTable);
-
+                using (MySqlCommand command = new MySqlCommand())
+                {
+                    dataTable.Clear();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    command.Connection = connectDb;
+                    command.CommandText = query;
+                    adapter.SelectCommand = command;
+                    adapter.Fill(dataTable);
+                }
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("ShowMonthlyReport: " + ex);
+                throw;
             }
             finally
             {
+                dataTable.Dispose();
+                CloseConnection();
+            }
+        }
+
+        public void ShowAnnualReport()
+        {
+            string query = "SELECT report_id, employee_id, name, type, job, " +
+                "(ROUND(gross_salary * 12, 2)) AS gross_salary, " +
+                "(ROUND(total_deductions * 12, 2)) AS total_deductions, (ROUND(tax * 12, 2)) AS tax, " +
+                "(ROUND(sss * 12, 2)) AS sss, (ROUND(pagibig * 12, 2)) AS pagibig, " +
+                "(ROUND(philhealth * 12, 2)) AS philhealth, (ROUND(loans * 12, 2)) AS loans, " +
+                "(ROUND(deductions * 12, 2)) AS deductions, (ROUND(remarks * 12, 2)) AS remarks, " +
+                "(ROUND(net_salary * 12, 2)) AS net_salary FROM report_tb";
+
+            try
+            {
+                OpenConnection();
+                using (MySqlCommand command = new MySqlCommand())
+                {
+                    dataTable.Clear();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    command.Connection = connectDb;
+                    command.CommandText = query;
+                    adapter.SelectCommand = command;
+                    adapter.Fill(dataTable);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ShowAnnuallyReport: " + ex);
+            }
+            finally
+            {
+                dataTable.Dispose();
                 CloseConnection();
             }
         }

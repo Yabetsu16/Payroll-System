@@ -24,29 +24,61 @@ namespace Payroll
 
         private void Report(string reportName)
         {
-            reporting.ShowReport();
-
-            try
+            if (reportName == "MonthlyPayrollReport")
             {
-                ReportDocument reportDocument = new ReportDocument();
+                reporting.ShowMonthlyReport();
 
-                string reportPath = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + "\\" + reportName + ".rpt";
+                try
+                {
+                    ReportDocument reportDocument = new ReportDocument();
 
-                reportDocument.Load(reportPath);
+                    string reportPath = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + "\\" + reportName + ".rpt";
 
-                reportDocument.SetDataSource(reporting.dataTable);
-                crystalReportViewer1.ReportSource = reportDocument;
-                crystalReportViewer1.Refresh();
+                    reportDocument.Load(reportPath);
+
+                    reportDocument.SetDataSource(reporting.dataTable);
+                    crystalReportViewer1.ReportSource = reportDocument;
+                    crystalReportViewer1.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
             }
-            catch (Exception ex)
+
+            if (reportName == "AnnualPayrollReport")
             {
-                Console.WriteLine(ex);
+                reporting.ShowAnnualReport();
+
+                try
+                {
+                    ReportDocument reportDocument = new ReportDocument();
+
+                    string reportPath = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + "\\" + reportName + ".rpt";
+
+                    reportDocument.Load(reportPath);
+
+                    reportDocument.SetDataSource(reporting.dataTable);
+                    crystalReportViewer1.ReportSource = reportDocument;
+                    crystalReportViewer1.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
             }
+
+            
         }
 
-        private void SummaryReportForm_Load(object sender, EventArgs e)
+        private void monthlyPayrollReportBtn_Click(object sender, EventArgs e)
         {
             Report("MonthlyPayrollReport");
+        }
+
+        private void anuallyPayrollReportBtn_Click(object sender, EventArgs e)
+        {
+            Report("AnnualPayrollReport");
         }
     }
 }
