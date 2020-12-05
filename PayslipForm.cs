@@ -16,6 +16,7 @@ namespace Payroll
     public partial class PayslipForm : Form
     {
         ReportingClass reporting = new ReportingClass();
+        WorkClass work = new WorkClass();
         public int employee_id;
 
         public PayslipForm()
@@ -48,6 +49,30 @@ namespace Payroll
         private void PayslipForm_Load(object sender, EventArgs e)
         {
             Report("PaySlipReport");
+
+            foreach (ToolStrip ts in crystalReportViewer1.Controls.OfType<ToolStrip>())
+            {
+                foreach (ToolStripButton tsb in ts.Items.OfType<ToolStripButton>())
+                {
+                    //hacky but should work. you can probably figure out a better method
+                    if (tsb.ToolTipText.ToLower().Contains("print"))
+                    {
+                        //Adding a handler for our propose
+                        tsb.Click += new EventHandler(printButton_Click);
+                    }
+                }
+            }
+
+            work.employeeId = employee_id;
+            work.GetWorkId();
+        }
+
+        private void printButton_Click(object sender, EventArgs e)
+        {
+            work.ResetDay();
+            PayrollForm payroll = new PayrollForm();
+            payroll.Show();
+            Hide();
         }
     }
 }

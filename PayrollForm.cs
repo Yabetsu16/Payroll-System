@@ -36,7 +36,7 @@ namespace Payroll
             editWorkPanel.Visible = false;
         }
 
-        private void RefreshDataGridView()
+        public void RefreshDataGridView()
         {
             workDgv.DataSource = null;
             work.ShowWork();
@@ -60,7 +60,7 @@ namespace Payroll
             workDgv.Columns[17].HeaderText = "Remaks";
         }
 
-        private void CreateDataGridViewButton()
+        public void CreateDataGridViewButton()
         {
             DataGridViewButtonColumn paySlipDgvBtn = new DataGridViewButtonColumn();
             paySlipDgvBtn.HeaderText = "Pay Slip";
@@ -78,7 +78,7 @@ namespace Payroll
 
         }
 
-        private void RemoveDataGridViewButton()
+        public void RemoveDataGridViewButton()
         {
             workDgv.Columns.Remove("paySlipDgvBtn");
             workDgv.Columns.Remove("editDgvBtn");
@@ -288,6 +288,7 @@ namespace Payroll
                     PayslipForm payslipForm = new PayslipForm();
                     payslipForm.employee_id = employeeId;
                     payslipForm.Show();
+                    Hide();
                 }
                 else
                 {

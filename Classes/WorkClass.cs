@@ -174,5 +174,26 @@ namespace Payroll.Classes
                 CloseConnection();
             }
         }
+
+        public void ResetDay()
+        {
+            string query = "UPDATE work_tb SET day = @day " +
+                "WHERE emp_id = @employee_id AND work_id = @work_id";
+
+            using (var command = new MySqlCommand())
+            {
+                OpenConnection();
+                command.CommandText = query;
+                command.CommandType = CommandType.Text;
+                command.Connection = connectDb;
+
+                command.Parameters.Add("@day", MySqlDbType.Int32).Value = 0;
+                command.Parameters.Add("@employee_id", MySqlDbType.Int32).Value = employeeId;
+                command.Parameters.Add("@work_id", MySqlDbType.Int32).Value = workId;
+
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+        }
     }
 }
