@@ -135,6 +135,7 @@ namespace Payroll
 
         private void showAddPanelBtn_Click(object sender, EventArgs e)
         {
+            CloseEditPanel();
             OpenAddPanel();
         }
 
@@ -173,6 +174,7 @@ namespace Payroll
             {
                 if (e.ColumnIndex == 7)
                 {
+                    CloseAddPanel();
                     id = (int)employeeDgv.Rows[e.RowIndex].Cells[0].Value;
                     editFirstnameTb.Text = employeeDgv.Rows[e.RowIndex].Cells[1].Value.ToString();
                     editLastnameTb.Text = employeeDgv.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -259,6 +261,14 @@ namespace Payroll
         private void searchTb_TextChanged(object sender, EventArgs e)
         {
             employees.SearchEmployees(searchTb.Text);
+        }
+
+        private void EmployeeForm_SizeChanged(object sender, EventArgs e)
+        {
+            timeKeepingPanel.Location = new Point(
+                Width / 2 - timeKeepingPanel.Size.Width / 2,
+                Height / 2 - timeKeepingPanel.Size.Height / 2);
+            timeKeepingPanel.Anchor = AnchorStyles.None;
         }
     }
 }

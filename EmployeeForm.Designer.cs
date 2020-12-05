@@ -68,6 +68,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.showAddPanelBtn = new System.Windows.Forms.Button();
             this.searchTb = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.timeKeepingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeKeepingDgv)).BeginInit();
@@ -76,26 +80,31 @@
             this.panel4.SuspendLayout();
             this.addEmployeePanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.timeKeepingPanel);
+            this.panel1.Controls.Add(this.editEmployeePanel);
+            this.panel1.Controls.Add(this.addEmployeePanel);
             this.panel1.Controls.Add(this.employeeDgv);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 58);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 48);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1283, 566);
+            this.panel1.Size = new System.Drawing.Size(1283, 576);
             this.panel1.TabIndex = 2;
             // 
             // timeKeepingPanel
             // 
-            this.timeKeepingPanel.BackgroundImage = global::Payroll.Properties.Resources.background;
             this.timeKeepingPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.timeKeepingPanel.Controls.Add(this.nameTimeKeepingLbl);
             this.timeKeepingPanel.Controls.Add(this.timeKeepingDgv);
             this.timeKeepingPanel.Controls.Add(this.closeTimeKeepingBtn);
-            this.timeKeepingPanel.Location = new System.Drawing.Point(382, 12);
+            this.timeKeepingPanel.Location = new System.Drawing.Point(362, 91);
             this.timeKeepingPanel.Name = "timeKeepingPanel";
             this.timeKeepingPanel.Size = new System.Drawing.Size(558, 395);
             this.timeKeepingPanel.TabIndex = 0;
@@ -148,7 +157,7 @@
             this.employeeDgv.Location = new System.Drawing.Point(0, 0);
             this.employeeDgv.Name = "employeeDgv";
             this.employeeDgv.ReadOnly = true;
-            this.employeeDgv.Size = new System.Drawing.Size(1283, 566);
+            this.employeeDgv.Size = new System.Drawing.Size(1283, 576);
             this.employeeDgv.TabIndex = 0;
             this.employeeDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDgv_CellContentClick);
             // 
@@ -156,17 +165,17 @@
             // 
             this.editEmployeePanel.BackColor = System.Drawing.Color.Transparent;
             this.editEmployeePanel.Controls.Add(this.panel4);
-            this.editEmployeePanel.Controls.Add(this.closeUpdatePanelBtn);
             this.editEmployeePanel.Controls.Add(this.label9);
-            this.editEmployeePanel.Controls.Add(this.editEmployeeBtn);
-            this.editEmployeePanel.Location = new System.Drawing.Point(968, 57);
+            this.editEmployeePanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.editEmployeePanel.Location = new System.Drawing.Point(653, 0);
             this.editEmployeePanel.Name = "editEmployeePanel";
-            this.editEmployeePanel.Size = new System.Drawing.Size(315, 566);
+            this.editEmployeePanel.Size = new System.Drawing.Size(315, 576);
             this.editEmployeePanel.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.editJob);
             this.panel4.Controls.Add(this.label11);
@@ -179,9 +188,10 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.editLastnameTb);
             this.panel4.Controls.Add(this.editTypeComB);
-            this.panel4.Location = new System.Drawing.Point(3, 45);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 51);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(309, 468);
+            this.panel4.Size = new System.Drawing.Size(315, 525);
             this.panel4.TabIndex = 18;
             // 
             // label13
@@ -290,7 +300,7 @@
             // 
             // closeUpdatePanelBtn
             // 
-            this.closeUpdatePanelBtn.Location = new System.Drawing.Point(39, 522);
+            this.closeUpdatePanelBtn.Location = new System.Drawing.Point(39, 15);
             this.closeUpdatePanelBtn.Name = "closeUpdatePanelBtn";
             this.closeUpdatePanelBtn.Size = new System.Drawing.Size(75, 35);
             this.closeUpdatePanelBtn.TabIndex = 1;
@@ -300,18 +310,19 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(66, 11);
+            this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(201, 31);
+            this.label9.Size = new System.Drawing.Size(315, 51);
             this.label9.TabIndex = 16;
             this.label9.Text = "Edit Employee";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // editEmployeeBtn
             // 
-            this.editEmployeeBtn.Location = new System.Drawing.Point(201, 522);
+            this.editEmployeeBtn.Location = new System.Drawing.Point(201, 15);
             this.editEmployeeBtn.Name = "editEmployeeBtn";
             this.editEmployeeBtn.Size = new System.Drawing.Size(75, 35);
             this.editEmployeeBtn.TabIndex = 0;
@@ -324,18 +335,17 @@
             this.addEmployeePanel.BackColor = System.Drawing.Color.Transparent;
             this.addEmployeePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addEmployeePanel.Controls.Add(this.panel2);
-            this.addEmployeePanel.Controls.Add(this.closeAddPanelBtn);
             this.addEmployeePanel.Controls.Add(this.label5);
-            this.addEmployeePanel.Controls.Add(this.addEmployeeBtn);
-            this.addEmployeePanel.Controls.Add(this.clearBtn);
-            this.addEmployeePanel.Location = new System.Drawing.Point(968, 58);
+            this.addEmployeePanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.addEmployeePanel.Location = new System.Drawing.Point(968, 0);
             this.addEmployeePanel.Name = "addEmployeePanel";
-            this.addEmployeePanel.Size = new System.Drawing.Size(315, 566);
+            this.addEmployeePanel.Size = new System.Drawing.Size(315, 576);
             this.addEmployeePanel.TabIndex = 3;
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.jobTb);
             this.panel2.Controls.Add(this.firstnameTb);
@@ -344,9 +354,10 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.lastnameTb);
             this.panel2.Controls.Add(this.typeComB);
-            this.panel2.Location = new System.Drawing.Point(3, 45);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 51);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(309, 468);
+            this.panel2.Size = new System.Drawing.Size(315, 525);
             this.panel2.TabIndex = 18;
             // 
             // label12
@@ -423,7 +434,7 @@
             // 
             // closeAddPanelBtn
             // 
-            this.closeAddPanelBtn.Location = new System.Drawing.Point(120, 522);
+            this.closeAddPanelBtn.Location = new System.Drawing.Point(120, 15);
             this.closeAddPanelBtn.Name = "closeAddPanelBtn";
             this.closeAddPanelBtn.Size = new System.Drawing.Size(75, 35);
             this.closeAddPanelBtn.TabIndex = 2;
@@ -433,18 +444,19 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(66, 11);
+            this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(201, 31);
+            this.label5.Size = new System.Drawing.Size(315, 51);
             this.label5.TabIndex = 16;
             this.label5.Text = "Add Employee";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // addEmployeeBtn
             // 
-            this.addEmployeeBtn.Location = new System.Drawing.Point(201, 522);
+            this.addEmployeeBtn.Location = new System.Drawing.Point(201, 15);
             this.addEmployeeBtn.Name = "addEmployeeBtn";
             this.addEmployeeBtn.Size = new System.Drawing.Size(75, 35);
             this.addEmployeeBtn.TabIndex = 0;
@@ -454,7 +466,7 @@
             // 
             // clearBtn
             // 
-            this.clearBtn.Location = new System.Drawing.Point(39, 522);
+            this.clearBtn.Location = new System.Drawing.Point(39, 15);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(75, 35);
             this.clearBtn.TabIndex = 1;
@@ -466,7 +478,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 20);
             this.label1.TabIndex = 3;
@@ -474,7 +486,7 @@
             // 
             // showAddPanelBtn
             // 
-            this.showAddPanelBtn.Location = new System.Drawing.Point(1194, 12);
+            this.showAddPanelBtn.Location = new System.Drawing.Point(70, 6);
             this.showAddPanelBtn.Name = "showAddPanelBtn";
             this.showAddPanelBtn.Size = new System.Drawing.Size(75, 36);
             this.showAddPanelBtn.TabIndex = 2;
@@ -484,47 +496,84 @@
             // 
             // searchTb
             // 
-            this.searchTb.Location = new System.Drawing.Point(152, 17);
+            this.searchTb.Location = new System.Drawing.Point(152, 9);
             this.searchTb.Name = "searchTb";
             this.searchTb.Size = new System.Drawing.Size(448, 26);
             this.searchTb.TabIndex = 0;
             this.searchTb.TextChanged += new System.EventHandler(this.searchTb_TextChanged);
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.searchTb);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1283, 48);
+            this.panel3.TabIndex = 4;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.showAddPanelBtn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(1126, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(157, 48);
+            this.panel5.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.addEmployeeBtn);
+            this.panel6.Controls.Add(this.clearBtn);
+            this.panel6.Controls.Add(this.closeAddPanelBtn);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 456);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(315, 69);
+            this.panel6.TabIndex = 13;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.editEmployeeBtn);
+            this.panel7.Controls.Add(this.closeUpdatePanelBtn);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 456);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(315, 69);
+            this.panel7.TabIndex = 19;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Payroll.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1283, 624);
-            this.Controls.Add(this.addEmployeePanel);
-            this.Controls.Add(this.editEmployeePanel);
-            this.Controls.Add(this.searchTb);
-            this.Controls.Add(this.showAddPanelBtn);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "EmployeeForm";
             this.Text = "Employee";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EmployeeForm_FormClosed);
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
+            this.SizeChanged += new System.EventHandler(this.EmployeeForm_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.timeKeepingPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.timeKeepingDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).EndInit();
             this.editEmployeePanel.ResumeLayout(false);
-            this.editEmployeePanel.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.addEmployeePanel.ResumeLayout(false);
-            this.addEmployeePanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -569,5 +618,9 @@
         private System.Windows.Forms.TextBox jobTb;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox editJob;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
     }
 }
