@@ -191,5 +191,22 @@ namespace Payroll.Classes
                 CloseConnection();
             }
         }
+
+        public void RefreshTimeKeeping(int employeeId)
+        {
+            string query = "DELETE FROM time_keeping_tb WHERE employee_id = @id";
+
+            using (var command = new MySqlCommand())
+            {
+                OpenConnection();
+                command.CommandText = query;
+                command.CommandType = CommandType.Text;
+                command.Connection = connectDb;
+                command.Parameters.Add("@id", MySqlDbType.Int32).Value = employeeId;
+
+                command.ExecuteNonQuery();
+                CloseConnection();
+            }
+        }
     }
 }

@@ -571,13 +571,17 @@
             // 
             this.workDgv.AllowUserToAddRows = false;
             this.workDgv.AllowUserToDeleteRows = false;
+            this.workDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.workDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.workDgv.BackgroundColor = System.Drawing.Color.White;
             this.workDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.workDgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.workDgv.Location = new System.Drawing.Point(0, 0);
             this.workDgv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.workDgv.MultiSelect = false;
             this.workDgv.Name = "workDgv";
             this.workDgv.ReadOnly = true;
+            this.workDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.workDgv.Size = new System.Drawing.Size(981, 636);
             this.workDgv.TabIndex = 2;
             this.workDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.workDgv_CellContentClick);

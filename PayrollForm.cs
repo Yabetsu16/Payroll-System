@@ -20,7 +20,6 @@ namespace Payroll
         public decimal totalDeductions = 0;
         public decimal totalPaySlip = 0;
 
-
         public PayrollForm()
         {
             InitializeComponent();
@@ -41,23 +40,23 @@ namespace Payroll
             workDgv.DataSource = null;
             work.ShowWork();
             workDgv.DataSource = work.dataTable;
-            workDgv.Columns[1].HeaderText = "Employee ID";
-            workDgv.Columns[2].HeaderText = "Firstname";
-            workDgv.Columns[3].HeaderText = "Lastname";
-            workDgv.Columns[4].HeaderText = "Type";
-            workDgv.Columns[5].HeaderText = "Gross";
-            workDgv.Columns[6].HeaderText = "Net";
-            workDgv.Columns[7].HeaderText = "Allowable Absences";
-            workDgv.Columns[8].HeaderText = "Day";
-            workDgv.Columns[9].HeaderText = "Cut-of Period";
-            workDgv.Columns[10].HeaderText = "Pay Slip";
-            workDgv.Columns[11].HeaderText = "Tax";
-            workDgv.Columns[12].HeaderText = "SSS";
-            workDgv.Columns[13].HeaderText = "Pagibig";
-            workDgv.Columns[14].HeaderText = "Philhealth";
-            workDgv.Columns[15].HeaderText = "Loans";
-            workDgv.Columns[16].HeaderText = "Deductions";
-            workDgv.Columns[17].HeaderText = "Remaks";
+            workDgv.Columns[2].HeaderText = "Employee ID";
+            workDgv.Columns[3].HeaderText = "Name";
+            workDgv.Columns[4].HeaderText = "Job";
+            workDgv.Columns[5].HeaderText = "Type";
+            workDgv.Columns[6].HeaderText = "Gross";
+            workDgv.Columns[7].HeaderText = "Net";
+            workDgv.Columns[8].HeaderText = "Allowable Absences";
+            workDgv.Columns[9].HeaderText = "Day";
+            workDgv.Columns[10].HeaderText = "Cut-of Period";
+            workDgv.Columns[11].HeaderText = "Pay Slip";
+            workDgv.Columns[12].HeaderText = "Tax";
+            workDgv.Columns[13].HeaderText = "SSS";
+            workDgv.Columns[14].HeaderText = "Pagibig";
+            workDgv.Columns[15].HeaderText = "Philhealth";
+            workDgv.Columns[16].HeaderText = "Loans";
+            workDgv.Columns[17].HeaderText = "Deductions";
+            workDgv.Columns[18].HeaderText = "Remaks";
         }
 
         public void CreateDataGridViewButton()
@@ -283,55 +282,62 @@ namespace Payroll
 
         private void workDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            try
             {
-                if ((int)workDgv.Rows[e.RowIndex].Cells[8].Value >= 15 &&
-                    workDgv.Rows[e.RowIndex].Cells[9].Value.ToString() == "15th"
-                    || (int)workDgv.Rows[e.RowIndex].Cells[8].Value >= 30 &&
-                    workDgv.Rows[e.RowIndex].Cells[9].Value.ToString() == "30th")
+                if (e.ColumnIndex == 0)
                 {
-                    employeeId = (int)workDgv.Rows[e.RowIndex].Cells[2].Value;
-                    PayslipForm payslipForm = new PayslipForm();
-                    payslipForm.employee_id = employeeId;
-                    payslipForm.Show();
-                    Hide();
+                    if ((int)workDgv.Rows[e.RowIndex].Cells[9].Value >= 15 &&
+                        workDgv.Rows[e.RowIndex].Cells[10].Value.ToString() == "15th"
+                        || (int)workDgv.Rows[e.RowIndex].Cells[9].Value >= 30 &&
+                        workDgv.Rows[e.RowIndex].Cells[10].Value.ToString() == "30th")
+                    {
+                        employeeId = (int)workDgv.Rows[e.RowIndex].Cells[2].Value;
+                        PayslipForm payslipForm = new PayslipForm();
+                        payslipForm.employee_id = employeeId;
+                        payslipForm.Show();
+                        Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Not yet pay day");
+                    }
                 }
-                else
+                if (e.ColumnIndex == 1)
                 {
-                    MessageBox.Show("Not yet pay day");
+                    OpenEditPanel();
+                    employeeId = (int)workDgv.Rows[e.RowIndex].Cells[2].Value;
+                    editEmployeeLbl.Text = "Edit " + workDgv.Rows[e.RowIndex].Cells[3].Value.ToString()
+                        + " Payroll";
+                    grossNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[6].Value);
+                    netNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[7].Value);
+                    allAbsencesNum.Value = (int)workDgv.Rows[e.RowIndex].Cells[8].Value;
+                    dayNum.Value = (int)workDgv.Rows[e.RowIndex].Cells[9].Value;
+                    if (workDgv.Rows[e.RowIndex].Cells[10].Value.ToString() == "15th")
+                    {
+                        fifteenthRb.Checked = true;
+                    }
+                    else
+                    {
+                        thirtiethRb.Checked = true;
+                    }
+                    paySlipNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[11].Value);
+                    taxNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[12].Value);
+                    sssNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[13].Value);
+                    pagibigNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[14].Value);
+                    philhealthNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[15].Value);
+                    loanNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[16].Value);
+                    otherDeductionNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[17].Value);
+                    deductionRemarksTb.Text = workDgv.Rows[e.RowIndex].Cells[18].Value.ToString();
+                    work.employeeId = employeeId;
+                    work.GetWorkId();
+                    workId = work.workId;
+                    Console.WriteLine("Employee ID: " + employeeId);
+                    Console.WriteLine("Work ID: " + workId);
                 }
             }
-            if (e.ColumnIndex == 1)
+            catch (Exception)
             {
-                OpenEditPanel();
-                employeeId = (int)workDgv.Rows[e.RowIndex].Cells[2].Value;
-                editEmployeeLbl.Text = "Edit " + workDgv.Rows[e.RowIndex].Cells[3].Value.ToString()
-                    + " Payroll";
-                grossNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[5].Value);
-                netNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[6].Value);
-                allAbsencesNum.Value = (int)workDgv.Rows[e.RowIndex].Cells[7].Value;
-                dayNum.Value = (int)workDgv.Rows[e.RowIndex].Cells[8].Value;
-                if (workDgv.Rows[e.RowIndex].Cells[9].Value.ToString() == "15th")
-                {
-                    fifteenthRb.Checked = true;
-                }
-                else
-                {
-                    thirtiethRb.Checked = true;
-                }
-                paySlipNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[10].Value);
-                taxNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[11].Value);
-                sssNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[12].Value);
-                pagibigNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[13].Value);
-                philhealthNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[14].Value);
-                loanNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[15].Value);
-                otherDeductionNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[16].Value);
-                deductionRemarksTb.Text = workDgv.Rows[e.RowIndex].Cells[17].Value.ToString();
-                work.employeeId = employeeId;
-                work.GetWorkId();
-                workId = work.workId;
-                Console.WriteLine("Employee ID: " + employeeId);
-                Console.WriteLine("Work ID: " + workId);
+                
             }
         }
 

@@ -17,6 +17,7 @@ namespace Payroll
     {
         ReportingClass reporting = new ReportingClass();
         WorkClass work = new WorkClass();
+        TimeKeepingClass timeKeeping = new TimeKeepingClass();
         public int employee_id;
 
         public PayslipForm()
@@ -70,6 +71,7 @@ namespace Payroll
         private void printButton_Click(object sender, EventArgs e)
         {
             work.ResetDay();
+            timeKeeping.RefreshTimeKeeping(employee_id);
             PayrollForm payroll = new PayrollForm();
             payroll.Show();
             Hide();
