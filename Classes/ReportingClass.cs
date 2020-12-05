@@ -169,5 +169,24 @@ namespace Payroll.Classes
                 CloseConnection();
             }
         }
+
+        public void ShowPaySlip(int employee_id)
+        {
+            string query = "SELECT employee_tb.employee_id AS employee_id, " +
+                "CONCAT(employee_tb.firstname, ', ', employee_tb.lastname) AS name, " +
+                "work_tb.gross_salary, work_tb.net_salary, " +
+                "work_tb.day, work_tb.cutof_period, work_tb.payslip, " +
+                "work_tb.tax, work_tb.sss, work_tb.pagibig, " +
+                "work_tb.philhealth, work_tb.loans, " +
+                "work_tb.deductions, work_tb.deduction_remarks " +
+                "FROM employee_tb " +
+                "INNER JOIN work_tb ON employee_tb.employee_id = work_tb.emp_id " +
+                "WHERE work_tb.emp_id = " + employee_id + ";";
+
+            dataTable.Clear();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, connectDb);
+            adapter.Fill(dataSet);
+            dataTable = dataSet.Tables[0];
+        }
     }
 }
