@@ -52,6 +52,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "PayslipForm";
             this.Text = "PaySlipForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PayslipForm_FormClosed);
             this.Load += new System.EventHandler(this.PayslipForm_Load);
             this.ResumeLayout(false);
 

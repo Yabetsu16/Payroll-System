@@ -60,7 +60,7 @@
             this.anuallyPayrollReportBtn.Name = "anuallyPayrollReportBtn";
             this.anuallyPayrollReportBtn.Size = new System.Drawing.Size(179, 28);
             this.anuallyPayrollReportBtn.TabIndex = 2;
-            this.anuallyPayrollReportBtn.Text = "Annuallly Payroll Report";
+            this.anuallyPayrollReportBtn.Text = "Annual Payroll Report";
             this.anuallyPayrollReportBtn.UseVisualStyleBackColor = true;
             this.anuallyPayrollReportBtn.Click += new System.EventHandler(this.anuallyPayrollReportBtn_Click);
             // 

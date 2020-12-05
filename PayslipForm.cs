@@ -74,5 +74,12 @@ namespace Payroll
             payroll.Show();
             Hide();
         }
+
+        private void PayslipForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            PayrollForm payroll = new PayrollForm();
+            payroll.Show();
+            Hide();
+        }
     }
 }

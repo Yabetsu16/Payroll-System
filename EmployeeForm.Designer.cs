@@ -33,9 +33,11 @@
             this.nameTimeKeepingLbl = new System.Windows.Forms.Label();
             this.timeKeepingDgv = new System.Windows.Forms.DataGridView();
             this.closeTimeKeepingBtn = new System.Windows.Forms.Button();
-            this.employeeDgv = new System.Windows.Forms.DataGridView();
             this.editEmployeePanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.editEmployeeBtn = new System.Windows.Forms.Button();
+            this.closeUpdatePanelBtn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.editJob = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -48,11 +50,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.editLastnameTb = new System.Windows.Forms.TextBox();
             this.editTypeComB = new System.Windows.Forms.ComboBox();
-            this.closeUpdatePanelBtn = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.editEmployeeBtn = new System.Windows.Forms.Button();
             this.addEmployeePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.addEmployeeBtn = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
+            this.closeAddPanelBtn = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.jobTb = new System.Windows.Forms.TextBox();
             this.firstnameTb = new System.Windows.Forms.TextBox();
@@ -61,33 +65,30 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lastnameTb = new System.Windows.Forms.TextBox();
             this.typeComB = new System.Windows.Forms.ComboBox();
-            this.closeAddPanelBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.addEmployeeBtn = new System.Windows.Forms.Button();
-            this.clearBtn = new System.Windows.Forms.Button();
+            this.employeeDgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.showAddPanelBtn = new System.Windows.Forms.Button();
             this.searchTb = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.timeKeepingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeKeepingDgv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
             this.editEmployeePanel.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.addEmployeePanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.timeKeepingPanel);
             this.panel1.Controls.Add(this.editEmployeePanel);
             this.panel1.Controls.Add(this.addEmployeePanel);
@@ -138,28 +139,14 @@
             // 
             // closeTimeKeepingBtn
             // 
+            this.closeTimeKeepingBtn.BackColor = System.Drawing.Color.Brown;
             this.closeTimeKeepingBtn.Location = new System.Drawing.Point(479, 356);
             this.closeTimeKeepingBtn.Name = "closeTimeKeepingBtn";
             this.closeTimeKeepingBtn.Size = new System.Drawing.Size(75, 35);
             this.closeTimeKeepingBtn.TabIndex = 18;
             this.closeTimeKeepingBtn.Text = "Close";
-            this.closeTimeKeepingBtn.UseVisualStyleBackColor = true;
+            this.closeTimeKeepingBtn.UseVisualStyleBackColor = false;
             this.closeTimeKeepingBtn.Click += new System.EventHandler(this.closeTimeKeepingBtn_Click);
-            // 
-            // employeeDgv
-            // 
-            this.employeeDgv.AllowUserToAddRows = false;
-            this.employeeDgv.AllowUserToDeleteRows = false;
-            this.employeeDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.employeeDgv.BackgroundColor = System.Drawing.Color.White;
-            this.employeeDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.employeeDgv.Location = new System.Drawing.Point(0, 0);
-            this.employeeDgv.Name = "employeeDgv";
-            this.employeeDgv.ReadOnly = true;
-            this.employeeDgv.Size = new System.Drawing.Size(1283, 576);
-            this.employeeDgv.TabIndex = 0;
-            this.employeeDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDgv_CellContentClick);
             // 
             // editEmployeePanel
             // 
@@ -193,6 +180,38 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(315, 525);
             this.panel4.TabIndex = 18;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.editEmployeeBtn);
+            this.panel7.Controls.Add(this.closeUpdatePanelBtn);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 456);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(315, 69);
+            this.panel7.TabIndex = 19;
+            // 
+            // editEmployeeBtn
+            // 
+            this.editEmployeeBtn.BackColor = System.Drawing.Color.SteelBlue;
+            this.editEmployeeBtn.Location = new System.Drawing.Point(201, 15);
+            this.editEmployeeBtn.Name = "editEmployeeBtn";
+            this.editEmployeeBtn.Size = new System.Drawing.Size(75, 35);
+            this.editEmployeeBtn.TabIndex = 0;
+            this.editEmployeeBtn.Text = "Edit";
+            this.editEmployeeBtn.UseVisualStyleBackColor = false;
+            this.editEmployeeBtn.Click += new System.EventHandler(this.editEmployeeBtn_Click);
+            // 
+            // closeUpdatePanelBtn
+            // 
+            this.closeUpdatePanelBtn.BackColor = System.Drawing.Color.Brown;
+            this.closeUpdatePanelBtn.Location = new System.Drawing.Point(39, 15);
+            this.closeUpdatePanelBtn.Name = "closeUpdatePanelBtn";
+            this.closeUpdatePanelBtn.Size = new System.Drawing.Size(75, 35);
+            this.closeUpdatePanelBtn.TabIndex = 1;
+            this.closeUpdatePanelBtn.Text = "Close";
+            this.closeUpdatePanelBtn.UseVisualStyleBackColor = false;
+            this.closeUpdatePanelBtn.Click += new System.EventHandler(this.closeUpdatePanelBtn_Click);
             // 
             // label13
             // 
@@ -298,16 +317,6 @@
             this.editTypeComB.Size = new System.Drawing.Size(202, 28);
             this.editTypeComB.TabIndex = 5;
             // 
-            // closeUpdatePanelBtn
-            // 
-            this.closeUpdatePanelBtn.Location = new System.Drawing.Point(39, 15);
-            this.closeUpdatePanelBtn.Name = "closeUpdatePanelBtn";
-            this.closeUpdatePanelBtn.Size = new System.Drawing.Size(75, 35);
-            this.closeUpdatePanelBtn.TabIndex = 1;
-            this.closeUpdatePanelBtn.Text = "Close";
-            this.closeUpdatePanelBtn.UseVisualStyleBackColor = true;
-            this.closeUpdatePanelBtn.Click += new System.EventHandler(this.closeUpdatePanelBtn_Click);
-            // 
             // label9
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
@@ -319,16 +328,6 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Edit Employee";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // editEmployeeBtn
-            // 
-            this.editEmployeeBtn.Location = new System.Drawing.Point(201, 15);
-            this.editEmployeeBtn.Name = "editEmployeeBtn";
-            this.editEmployeeBtn.Size = new System.Drawing.Size(75, 35);
-            this.editEmployeeBtn.TabIndex = 0;
-            this.editEmployeeBtn.Text = "Edit";
-            this.editEmployeeBtn.UseVisualStyleBackColor = true;
-            this.editEmployeeBtn.Click += new System.EventHandler(this.editEmployeeBtn_Click);
             // 
             // addEmployeePanel
             // 
@@ -359,6 +358,49 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(315, 525);
             this.panel2.TabIndex = 18;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.addEmployeeBtn);
+            this.panel6.Controls.Add(this.clearBtn);
+            this.panel6.Controls.Add(this.closeAddPanelBtn);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 456);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(315, 69);
+            this.panel6.TabIndex = 13;
+            // 
+            // addEmployeeBtn
+            // 
+            this.addEmployeeBtn.BackColor = System.Drawing.Color.Green;
+            this.addEmployeeBtn.Location = new System.Drawing.Point(201, 15);
+            this.addEmployeeBtn.Name = "addEmployeeBtn";
+            this.addEmployeeBtn.Size = new System.Drawing.Size(75, 35);
+            this.addEmployeeBtn.TabIndex = 0;
+            this.addEmployeeBtn.Text = "Add";
+            this.addEmployeeBtn.UseVisualStyleBackColor = false;
+            this.addEmployeeBtn.Click += new System.EventHandler(this.addEmployeeBtn_Click);
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.Location = new System.Drawing.Point(39, 15);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(75, 35);
+            this.clearBtn.TabIndex = 1;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
+            // closeAddPanelBtn
+            // 
+            this.closeAddPanelBtn.BackColor = System.Drawing.Color.Brown;
+            this.closeAddPanelBtn.Location = new System.Drawing.Point(120, 15);
+            this.closeAddPanelBtn.Name = "closeAddPanelBtn";
+            this.closeAddPanelBtn.Size = new System.Drawing.Size(75, 35);
+            this.closeAddPanelBtn.TabIndex = 2;
+            this.closeAddPanelBtn.Text = "Close";
+            this.closeAddPanelBtn.UseVisualStyleBackColor = false;
+            this.closeAddPanelBtn.Click += new System.EventHandler(this.closeAddPanelBtn_Click);
             // 
             // label12
             // 
@@ -432,16 +474,6 @@
             this.typeComB.Size = new System.Drawing.Size(202, 28);
             this.typeComB.TabIndex = 3;
             // 
-            // closeAddPanelBtn
-            // 
-            this.closeAddPanelBtn.Location = new System.Drawing.Point(120, 15);
-            this.closeAddPanelBtn.Name = "closeAddPanelBtn";
-            this.closeAddPanelBtn.Size = new System.Drawing.Size(75, 35);
-            this.closeAddPanelBtn.TabIndex = 2;
-            this.closeAddPanelBtn.Text = "Close";
-            this.closeAddPanelBtn.UseVisualStyleBackColor = true;
-            this.closeAddPanelBtn.Click += new System.EventHandler(this.closeAddPanelBtn_Click);
-            // 
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -454,25 +486,20 @@
             this.label5.Text = "Add Employee";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // addEmployeeBtn
+            // employeeDgv
             // 
-            this.addEmployeeBtn.Location = new System.Drawing.Point(201, 15);
-            this.addEmployeeBtn.Name = "addEmployeeBtn";
-            this.addEmployeeBtn.Size = new System.Drawing.Size(75, 35);
-            this.addEmployeeBtn.TabIndex = 0;
-            this.addEmployeeBtn.Text = "Add";
-            this.addEmployeeBtn.UseVisualStyleBackColor = true;
-            this.addEmployeeBtn.Click += new System.EventHandler(this.addEmployeeBtn_Click);
-            // 
-            // clearBtn
-            // 
-            this.clearBtn.Location = new System.Drawing.Point(39, 15);
-            this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(75, 35);
-            this.clearBtn.TabIndex = 1;
-            this.clearBtn.Text = "Clear";
-            this.clearBtn.UseVisualStyleBackColor = true;
-            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            this.employeeDgv.AllowUserToAddRows = false;
+            this.employeeDgv.AllowUserToDeleteRows = false;
+            this.employeeDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.employeeDgv.BackgroundColor = System.Drawing.Color.White;
+            this.employeeDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeDgv.Location = new System.Drawing.Point(0, 0);
+            this.employeeDgv.Name = "employeeDgv";
+            this.employeeDgv.ReadOnly = true;
+            this.employeeDgv.Size = new System.Drawing.Size(1283, 576);
+            this.employeeDgv.TabIndex = 0;
+            this.employeeDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDgv_CellContentClick);
             // 
             // label1
             // 
@@ -486,12 +513,13 @@
             // 
             // showAddPanelBtn
             // 
+            this.showAddPanelBtn.BackColor = System.Drawing.Color.Green;
             this.showAddPanelBtn.Location = new System.Drawing.Point(70, 6);
             this.showAddPanelBtn.Name = "showAddPanelBtn";
             this.showAddPanelBtn.Size = new System.Drawing.Size(75, 36);
             this.showAddPanelBtn.TabIndex = 2;
             this.showAddPanelBtn.Text = "Add";
-            this.showAddPanelBtn.UseVisualStyleBackColor = true;
+            this.showAddPanelBtn.UseVisualStyleBackColor = false;
             this.showAddPanelBtn.Click += new System.EventHandler(this.showAddPanelBtn_Click);
             // 
             // searchTb
@@ -504,6 +532,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.searchTb);
             this.panel3.Controls.Add(this.label1);
@@ -522,31 +551,11 @@
             this.panel5.Size = new System.Drawing.Size(157, 48);
             this.panel5.TabIndex = 4;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.addEmployeeBtn);
-            this.panel6.Controls.Add(this.clearBtn);
-            this.panel6.Controls.Add(this.closeAddPanelBtn);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 456);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(315, 69);
-            this.panel6.TabIndex = 13;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.editEmployeeBtn);
-            this.panel7.Controls.Add(this.closeUpdatePanelBtn);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 456);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(315, 69);
-            this.panel7.TabIndex = 19;
-            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Payroll.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1283, 624);
             this.Controls.Add(this.panel1);
@@ -561,18 +570,18 @@
             this.panel1.ResumeLayout(false);
             this.timeKeepingPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.timeKeepingDgv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).EndInit();
             this.editEmployeePanel.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.addEmployeePanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDgv)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

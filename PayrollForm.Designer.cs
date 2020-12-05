@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.editWorkPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.paySlipNum = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.thirtiethRb = new System.Windows.Forms.RadioButton();
-            this.fifteenthRb = new System.Windows.Forms.RadioButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.editPayrollBtn = new System.Windows.Forms.Button();
+            this.closeEditPayrollPanel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.totalDeductionLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,6 +49,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.taxNum = new System.Windows.Forms.NumericUpDown();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.paySlipNum = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.thirtiethRb = new System.Windows.Forms.RadioButton();
+            this.fifteenthRb = new System.Windows.Forms.RadioButton();
             this.dayNum = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.allAbsencesNum = new System.Windows.Forms.NumericUpDown();
@@ -60,18 +63,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.grossNum = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.closeEditPayrollPanel = new System.Windows.Forms.Button();
-            this.editPayrollBtn = new System.Windows.Forms.Button();
             this.editEmployeeLbl = new System.Windows.Forms.Label();
             this.workDgv = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.searchTb = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.editWorkPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.paySlipNum)).BeginInit();
+            this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loanNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.otherDeductionNum)).BeginInit();
@@ -79,6 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pagibigNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sssNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxNum)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paySlipNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.allAbsencesNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.netNum)).BeginInit();
@@ -86,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.workDgv)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // editWorkPanel
@@ -103,91 +103,37 @@
             this.editWorkPanel.Size = new System.Drawing.Size(308, 636);
             this.editWorkPanel.TabIndex = 3;
             // 
-            // panel1
+            // panel4
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.paySlipNum);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.thirtiethRb);
-            this.panel1.Controls.Add(this.fifteenthRb);
-            this.panel1.Controls.Add(this.dayNum);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.allAbsencesNum);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.netNum);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.grossNum);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 54);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(291, 232);
-            this.panel1.TabIndex = 1;
+            this.panel4.Controls.Add(this.editPayrollBtn);
+            this.panel4.Controls.Add(this.closeEditPayrollPanel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 663);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(291, 78);
+            this.panel4.TabIndex = 6;
             // 
-            // paySlipNum
+            // editPayrollBtn
             // 
-            this.paySlipNum.DecimalPlaces = 2;
-            this.paySlipNum.Enabled = false;
-            this.paySlipNum.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.paySlipNum.Location = new System.Drawing.Point(136, 196);
-            this.paySlipNum.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.paySlipNum.Name = "paySlipNum";
-            this.paySlipNum.ReadOnly = true;
-            this.paySlipNum.Size = new System.Drawing.Size(143, 26);
-            this.paySlipNum.TabIndex = 24;
-            this.paySlipNum.ThousandsSeparator = true;
+            this.editPayrollBtn.BackColor = System.Drawing.Color.SteelBlue;
+            this.editPayrollBtn.Location = new System.Drawing.Point(160, 22);
+            this.editPayrollBtn.Name = "editPayrollBtn";
+            this.editPayrollBtn.Size = new System.Drawing.Size(75, 35);
+            this.editPayrollBtn.TabIndex = 3;
+            this.editPayrollBtn.Text = "Edit";
+            this.editPayrollBtn.UseVisualStyleBackColor = false;
+            this.editPayrollBtn.Click += new System.EventHandler(this.editPayrollBtn_Click);
             // 
-            // label15
+            // closeEditPayrollPanel
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(65, 198);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 20);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "Pay Slip";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(55, 138);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(102, 20);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "Cut-of Period";
-            // 
-            // thirtiethRb
-            // 
-            this.thirtiethRb.AutoSize = true;
-            this.thirtiethRb.Location = new System.Drawing.Point(163, 166);
-            this.thirtiethRb.Name = "thirtiethRb";
-            this.thirtiethRb.Size = new System.Drawing.Size(59, 24);
-            this.thirtiethRb.TabIndex = 16;
-            this.thirtiethRb.TabStop = true;
-            this.thirtiethRb.Text = "30th";
-            this.thirtiethRb.UseVisualStyleBackColor = true;
-            this.thirtiethRb.CheckedChanged += new System.EventHandler(this.thirtiethMonthRb_CheckedChanged);
-            // 
-            // fifteenthRb
-            // 
-            this.fifteenthRb.AutoSize = true;
-            this.fifteenthRb.Checked = true;
-            this.fifteenthRb.Location = new System.Drawing.Point(163, 136);
-            this.fifteenthRb.Name = "fifteenthRb";
-            this.fifteenthRb.Size = new System.Drawing.Size(59, 24);
-            this.fifteenthRb.TabIndex = 15;
-            this.fifteenthRb.TabStop = true;
-            this.fifteenthRb.Text = "15th";
-            this.fifteenthRb.UseVisualStyleBackColor = true;
-            this.fifteenthRb.CheckedChanged += new System.EventHandler(this.fifteenthMonthRb_CheckedChanged);
+            this.closeEditPayrollPanel.BackColor = System.Drawing.Color.Brown;
+            this.closeEditPayrollPanel.Location = new System.Drawing.Point(73, 22);
+            this.closeEditPayrollPanel.Name = "closeEditPayrollPanel";
+            this.closeEditPayrollPanel.Size = new System.Drawing.Size(75, 35);
+            this.closeEditPayrollPanel.TabIndex = 5;
+            this.closeEditPayrollPanel.Text = "Close";
+            this.closeEditPayrollPanel.UseVisualStyleBackColor = false;
+            this.closeEditPayrollPanel.Click += new System.EventHandler(this.closeEditPayrollPanel_Click);
             // 
             // groupBox1
             // 
@@ -428,6 +374,92 @@
             this.taxNum.TabIndex = 9;
             this.taxNum.ThousandsSeparator = true;
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.paySlipNum);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.thirtiethRb);
+            this.panel1.Controls.Add(this.fifteenthRb);
+            this.panel1.Controls.Add(this.dayNum);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.allAbsencesNum);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.netNum);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.grossNum);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 54);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(291, 232);
+            this.panel1.TabIndex = 1;
+            // 
+            // paySlipNum
+            // 
+            this.paySlipNum.DecimalPlaces = 2;
+            this.paySlipNum.Enabled = false;
+            this.paySlipNum.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.paySlipNum.Location = new System.Drawing.Point(136, 196);
+            this.paySlipNum.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.paySlipNum.Name = "paySlipNum";
+            this.paySlipNum.ReadOnly = true;
+            this.paySlipNum.Size = new System.Drawing.Size(143, 26);
+            this.paySlipNum.TabIndex = 24;
+            this.paySlipNum.ThousandsSeparator = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(65, 198);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(65, 20);
+            this.label15.TabIndex = 23;
+            this.label15.Text = "Pay Slip";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(55, 138);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(102, 20);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Cut-of Period";
+            // 
+            // thirtiethRb
+            // 
+            this.thirtiethRb.AutoSize = true;
+            this.thirtiethRb.Location = new System.Drawing.Point(163, 166);
+            this.thirtiethRb.Name = "thirtiethRb";
+            this.thirtiethRb.Size = new System.Drawing.Size(59, 24);
+            this.thirtiethRb.TabIndex = 16;
+            this.thirtiethRb.TabStop = true;
+            this.thirtiethRb.Text = "30th";
+            this.thirtiethRb.UseVisualStyleBackColor = true;
+            this.thirtiethRb.CheckedChanged += new System.EventHandler(this.thirtiethMonthRb_CheckedChanged);
+            // 
+            // fifteenthRb
+            // 
+            this.fifteenthRb.AutoSize = true;
+            this.fifteenthRb.Checked = true;
+            this.fifteenthRb.Location = new System.Drawing.Point(163, 136);
+            this.fifteenthRb.Name = "fifteenthRb";
+            this.fifteenthRb.Size = new System.Drawing.Size(59, 24);
+            this.fifteenthRb.TabIndex = 15;
+            this.fifteenthRb.TabStop = true;
+            this.fifteenthRb.Text = "15th";
+            this.fifteenthRb.UseVisualStyleBackColor = true;
+            this.fifteenthRb.CheckedChanged += new System.EventHandler(this.fifteenthMonthRb_CheckedChanged);
+            // 
             // dayNum
             // 
             this.dayNum.Location = new System.Drawing.Point(163, 72);
@@ -524,26 +556,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Gross";
             // 
-            // closeEditPayrollPanel
-            // 
-            this.closeEditPayrollPanel.Location = new System.Drawing.Point(73, 22);
-            this.closeEditPayrollPanel.Name = "closeEditPayrollPanel";
-            this.closeEditPayrollPanel.Size = new System.Drawing.Size(75, 35);
-            this.closeEditPayrollPanel.TabIndex = 5;
-            this.closeEditPayrollPanel.Text = "Close";
-            this.closeEditPayrollPanel.UseVisualStyleBackColor = true;
-            this.closeEditPayrollPanel.Click += new System.EventHandler(this.closeEditPayrollPanel_Click);
-            // 
-            // editPayrollBtn
-            // 
-            this.editPayrollBtn.Location = new System.Drawing.Point(160, 22);
-            this.editPayrollBtn.Name = "editPayrollBtn";
-            this.editPayrollBtn.Size = new System.Drawing.Size(75, 35);
-            this.editPayrollBtn.TabIndex = 3;
-            this.editPayrollBtn.Text = "Edit";
-            this.editPayrollBtn.UseVisualStyleBackColor = true;
-            this.editPayrollBtn.Click += new System.EventHandler(this.editPayrollBtn_Click);
-            // 
             // editEmployeeLbl
             // 
             this.editEmployeeLbl.Dock = System.Windows.Forms.DockStyle.Top;
@@ -559,6 +571,7 @@
             // 
             this.workDgv.AllowUserToAddRows = false;
             this.workDgv.AllowUserToDeleteRows = false;
+            this.workDgv.BackgroundColor = System.Drawing.Color.White;
             this.workDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.workDgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.workDgv.Location = new System.Drawing.Point(0, 0);
@@ -588,6 +601,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.searchTb);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -598,6 +612,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.workDgv);
             this.panel3.Controls.Add(this.editWorkPanel);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -606,21 +621,12 @@
             this.panel3.Size = new System.Drawing.Size(1289, 636);
             this.panel3.TabIndex = 23;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.editPayrollBtn);
-            this.panel4.Controls.Add(this.closeEditPayrollPanel);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 663);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(291, 78);
-            this.panel4.TabIndex = 6;
-            // 
             // PayrollForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackgroundImage = global::Payroll.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(1289, 682);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -633,9 +639,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PayrollForm_FormClosed);
             this.Load += new System.EventHandler(this.PayrollForm_Load);
             this.editWorkPanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.paySlipNum)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loanNum)).EndInit();
@@ -644,6 +648,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pagibigNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sssNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taxNum)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.paySlipNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.allAbsencesNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.netNum)).EndInit();
@@ -652,7 +659,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -39,6 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(50, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -49,6 +50,7 @@
             // currentDateTimeLbl
             // 
             this.currentDateTimeLbl.AutoSize = true;
+            this.currentDateTimeLbl.BackColor = System.Drawing.Color.Transparent;
             this.currentDateTimeLbl.Location = new System.Drawing.Point(208, 9);
             this.currentDateTimeLbl.Name = "currentDateTimeLbl";
             this.currentDateTimeLbl.Size = new System.Drawing.Size(139, 20);
@@ -83,6 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Payroll.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(455, 188);
             this.Controls.Add(this.timeOutBtn);
             this.Controls.Add(this.timeInBtn);

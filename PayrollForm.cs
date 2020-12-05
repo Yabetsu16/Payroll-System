@@ -265,6 +265,12 @@ namespace Payroll
                 total = 0;
             }
             netNum.Value = total;
+
+            if (fifteenthRb.Checked)
+            {
+                total /= 2;
+            }
+            paySlipNum.Value = total;
             totalDeductionLbl.Text = Decimal.Round(totalDeductions, 2).ToString();
         }
 
@@ -279,9 +285,9 @@ namespace Payroll
         {
             if (e.ColumnIndex == 0)
             {
-                if ((int)workDgv.Rows[e.RowIndex].Cells[8].Value == 15 &&
+                if ((int)workDgv.Rows[e.RowIndex].Cells[8].Value >= 15 &&
                     workDgv.Rows[e.RowIndex].Cells[9].Value.ToString() == "15th"
-                    || (int)workDgv.Rows[e.RowIndex].Cells[8].Value == 30 &&
+                    || (int)workDgv.Rows[e.RowIndex].Cells[8].Value >= 30 &&
                     workDgv.Rows[e.RowIndex].Cells[9].Value.ToString() == "30th")
                 {
                     employeeId = (int)workDgv.Rows[e.RowIndex].Cells[2].Value;
