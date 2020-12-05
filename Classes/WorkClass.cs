@@ -45,8 +45,8 @@ namespace Payroll.Classes
 
         public void ShowWork()
         {
-            string query = "SELECT employee_tb.employee_id, employee_tb.firstname, " +
-                "employee_tb.lastname, employee_tb.type, " +
+            string query = "SELECT employee_tb.employee_id, " +
+                "CONCAT(employee_tb.firstname, ', ', employee_tb.lastname) AS name, employee_tb.type, " +
                 "work_tb.gross_salary, work_tb.net_salary, " +
                 "work_tb.allowable_absences, work_tb.day, " +
                 "work_tb.cutof_period, work_tb.payslip, " +

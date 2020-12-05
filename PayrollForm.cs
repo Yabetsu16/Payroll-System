@@ -62,16 +62,25 @@ namespace Payroll
 
         private void CreateDataGridViewButton()
         {
+            DataGridViewButtonColumn paySlipDgvBtn = new DataGridViewButtonColumn();
+            paySlipDgvBtn.HeaderText = "Pay Slip";
+            paySlipDgvBtn.Text = "Pay Slip";
+            paySlipDgvBtn.Name = "paySlipDgvBtn";
+            paySlipDgvBtn.UseColumnTextForButtonValue = true;
+            workDgv.Columns.Add(paySlipDgvBtn);
+
             DataGridViewButtonColumn editDgvBtn = new DataGridViewButtonColumn();
             editDgvBtn.HeaderText = "Edit";
             editDgvBtn.Text = "Edit";
             editDgvBtn.Name = "editDgvBtn";
             editDgvBtn.UseColumnTextForButtonValue = true;
             workDgv.Columns.Add(editDgvBtn);
+
         }
 
         private void RemoveDataGridViewButton()
         {
+            workDgv.Columns.Remove("paySlipDgvBtn");
             workDgv.Columns.Remove("editDgvBtn");
         }
 
@@ -270,10 +279,27 @@ namespace Payroll
         {
             if (e.ColumnIndex == 0)
             {
+                if ((int)workDgv.Rows[e.RowIndex].Cells[8].Value == 15 &&
+                    workDgv.Rows[e.RowIndex].Cells[9].Value.ToString() == "15th"
+                    || (int)workDgv.Rows[e.RowIndex].Cells[8].Value == 30 &&
+                    workDgv.Rows[e.RowIndex].Cells[9].Value.ToString() == "30th")
+                {
+                    employeeId = (int)workDgv.Rows[e.RowIndex].Cells[2].Value;
+                    PayslipForm payslipForm = new PayslipForm();
+                    payslipForm.employee_id = employeeId;
+                    payslipForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Not yet pay day");
+                }
+            }
+            if (e.ColumnIndex == 1)
+            {
                 OpenEditPanel();
-                employeeId = (int)workDgv.Rows[e.RowIndex].Cells[1].Value;
-                editEmployeeLbl.Text = "Edit " + workDgv.Rows[e.RowIndex].Cells[2].Value.ToString() + " " +
-                    workDgv.Rows[e.RowIndex].Cells[3].Value.ToString() + " Payroll";
+                employeeId = (int)workDgv.Rows[e.RowIndex].Cells[2].Value;
+                editEmployeeLbl.Text = "Edit " + workDgv.Rows[e.RowIndex].Cells[3].Value.ToString()
+                    + " Payroll";
                 grossNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[5].Value);
                 netNum.Value = Convert.ToDecimal(workDgv.Rows[e.RowIndex].Cells[6].Value);
                 allAbsencesNum.Value = (int)workDgv.Rows[e.RowIndex].Cells[7].Value;
