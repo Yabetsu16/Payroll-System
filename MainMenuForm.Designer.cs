@@ -74,6 +74,7 @@
             this.summaryReportBtn.TabIndex = 3;
             this.summaryReportBtn.Text = "Summary Report";
             this.summaryReportBtn.UseVisualStyleBackColor = true;
+            this.summaryReportBtn.Click += new System.EventHandler(this.summaryReportBtn_Click);
             // 
             // logOutBtn
             // 

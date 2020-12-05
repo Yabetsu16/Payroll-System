@@ -38,5 +38,12 @@ namespace Payroll
             payroll.Show();
             Hide();
         }
+
+        private void summaryReportBtn_Click(object sender, EventArgs e)
+        {
+            SummaryReportForm summary = new SummaryReportForm();
+            summary.Show();
+            Hide();
+        }
     }
 }
