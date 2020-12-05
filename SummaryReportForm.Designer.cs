@@ -74,6 +74,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "SummaryReportForm";
             this.Text = "SummaryReportForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SummaryReportForm_FormClosed);
             this.ResumeLayout(false);
 
         }

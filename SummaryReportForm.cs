@@ -67,8 +67,6 @@ namespace Payroll
                     Console.WriteLine(ex);
                 }
             }
-
-            
         }
 
         private void monthlyPayrollReportBtn_Click(object sender, EventArgs e)
@@ -79,6 +77,13 @@ namespace Payroll
         private void anuallyPayrollReportBtn_Click(object sender, EventArgs e)
         {
             Report("AnnualPayrollReport");
+        }
+
+        private void SummaryReportForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MainMenuForm mainMenu = new MainMenuForm();
+            mainMenu.Show();
+            Hide();
         }
     }
 }

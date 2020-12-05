@@ -66,6 +66,9 @@
             this.workDgv = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.searchTb = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.editWorkPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paySlipNum)).BeginInit();
@@ -81,18 +84,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.netNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grossNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workDgv)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // editWorkPanel
             // 
+            this.editWorkPanel.AutoScroll = true;
+            this.editWorkPanel.Controls.Add(this.panel4);
+            this.editWorkPanel.Controls.Add(this.groupBox1);
             this.editWorkPanel.Controls.Add(this.panel1);
-            this.editWorkPanel.Controls.Add(this.closeEditPayrollPanel);
-            this.editWorkPanel.Controls.Add(this.editPayrollBtn);
             this.editWorkPanel.Controls.Add(this.editEmployeeLbl);
-            this.editWorkPanel.Location = new System.Drawing.Point(974, 1);
+            this.editWorkPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.editWorkPanel.Location = new System.Drawing.Point(981, 0);
             this.editWorkPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.editWorkPanel.Name = "editWorkPanel";
-            this.editWorkPanel.Size = new System.Drawing.Size(308, 623);
+            this.editWorkPanel.Size = new System.Drawing.Size(308, 636);
             this.editWorkPanel.TabIndex = 3;
             // 
             // panel1
@@ -103,7 +111,6 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.thirtiethRb);
             this.panel1.Controls.Add(this.fifteenthRb);
-            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.dayNum);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.allAbsencesNum);
@@ -112,9 +119,10 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.grossNum);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(3, 57);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 513);
+            this.panel1.Size = new System.Drawing.Size(291, 232);
             this.panel1.TabIndex = 1;
             // 
             // paySlipNum
@@ -126,7 +134,7 @@
             0,
             0,
             0});
-            this.paySlipNum.Location = new System.Drawing.Point(133, 208);
+            this.paySlipNum.Location = new System.Drawing.Point(136, 196);
             this.paySlipNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -141,7 +149,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(62, 210);
+            this.label15.Location = new System.Drawing.Point(65, 198);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(65, 20);
             this.label15.TabIndex = 23;
@@ -150,7 +158,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(52, 150);
+            this.label14.Location = new System.Drawing.Point(55, 138);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 20);
             this.label14.TabIndex = 17;
@@ -159,7 +167,7 @@
             // thirtiethRb
             // 
             this.thirtiethRb.AutoSize = true;
-            this.thirtiethRb.Location = new System.Drawing.Point(160, 178);
+            this.thirtiethRb.Location = new System.Drawing.Point(163, 166);
             this.thirtiethRb.Name = "thirtiethRb";
             this.thirtiethRb.Size = new System.Drawing.Size(59, 24);
             this.thirtiethRb.TabIndex = 16;
@@ -172,7 +180,7 @@
             // 
             this.fifteenthRb.AutoSize = true;
             this.fifteenthRb.Checked = true;
-            this.fifteenthRb.Location = new System.Drawing.Point(160, 148);
+            this.fifteenthRb.Location = new System.Drawing.Point(163, 136);
             this.fifteenthRb.Name = "fifteenthRb";
             this.fifteenthRb.Size = new System.Drawing.Size(59, 24);
             this.fifteenthRb.TabIndex = 15;
@@ -199,9 +207,10 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.taxNum);
-            this.groupBox1.Location = new System.Drawing.Point(3, 240);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 286);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 377);
+            this.groupBox1.Size = new System.Drawing.Size(291, 377);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Deductions";
@@ -209,7 +218,7 @@
             // totalDeductionLbl
             // 
             this.totalDeductionLbl.AutoSize = true;
-            this.totalDeductionLbl.Location = new System.Drawing.Point(139, 32);
+            this.totalDeductionLbl.Location = new System.Drawing.Point(159, 32);
             this.totalDeductionLbl.Name = "totalDeductionLbl";
             this.totalDeductionLbl.Size = new System.Drawing.Size(40, 20);
             this.totalDeductionLbl.TabIndex = 26;
@@ -218,7 +227,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 32);
+            this.label1.Location = new System.Drawing.Point(28, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 20);
             this.label1.TabIndex = 25;
@@ -232,7 +241,7 @@
             0,
             0,
             0});
-            this.loanNum.Location = new System.Drawing.Point(155, 183);
+            this.loanNum.Location = new System.Drawing.Point(163, 183);
             this.loanNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -247,7 +256,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(104, 185);
+            this.label13.Location = new System.Drawing.Point(112, 185);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(45, 20);
             this.label13.TabIndex = 20;
@@ -255,7 +264,7 @@
             // 
             // deductionRemarksTb
             // 
-            this.deductionRemarksTb.Location = new System.Drawing.Point(6, 279);
+            this.deductionRemarksTb.Location = new System.Drawing.Point(14, 279);
             this.deductionRemarksTb.Multiline = true;
             this.deductionRemarksTb.Name = "deductionRemarksTb";
             this.deductionRemarksTb.Size = new System.Drawing.Size(265, 90);
@@ -264,7 +273,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 256);
+            this.label11.Location = new System.Drawing.Point(14, 256);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 20);
             this.label11.TabIndex = 18;
@@ -278,7 +287,7 @@
             0,
             0,
             0});
-            this.otherDeductionNum.Location = new System.Drawing.Point(155, 215);
+            this.otherDeductionNum.Location = new System.Drawing.Point(163, 215);
             this.otherDeductionNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -293,7 +302,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 217);
+            this.label10.Location = new System.Drawing.Point(31, 217);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(126, 20);
             this.label10.TabIndex = 16;
@@ -308,7 +317,7 @@
             0,
             0,
             0});
-            this.philhealthNum.Location = new System.Drawing.Point(155, 151);
+            this.philhealthNum.Location = new System.Drawing.Point(163, 151);
             this.philhealthNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -323,7 +332,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(88, 121);
+            this.label8.Location = new System.Drawing.Point(96, 121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 20);
             this.label8.TabIndex = 12;
@@ -332,7 +341,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(71, 153);
+            this.label9.Location = new System.Drawing.Point(79, 153);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 20);
             this.label9.TabIndex = 14;
@@ -347,7 +356,7 @@
             0,
             0,
             0});
-            this.pagibigNum.Location = new System.Drawing.Point(155, 119);
+            this.pagibigNum.Location = new System.Drawing.Point(163, 119);
             this.pagibigNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -368,7 +377,7 @@
             0,
             0,
             0});
-            this.sssNum.Location = new System.Drawing.Point(155, 87);
+            this.sssNum.Location = new System.Drawing.Point(163, 87);
             this.sssNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -383,7 +392,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(115, 57);
+            this.label6.Location = new System.Drawing.Point(123, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 20);
             this.label6.TabIndex = 8;
@@ -392,7 +401,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(107, 89);
+            this.label7.Location = new System.Drawing.Point(115, 89);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 20);
             this.label7.TabIndex = 10;
@@ -407,7 +416,7 @@
             0,
             0,
             0});
-            this.taxNum.Location = new System.Drawing.Point(155, 55);
+            this.taxNum.Location = new System.Drawing.Point(163, 55);
             this.taxNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -421,7 +430,7 @@
             // 
             // dayNum
             // 
-            this.dayNum.Location = new System.Drawing.Point(160, 84);
+            this.dayNum.Location = new System.Drawing.Point(163, 72);
             this.dayNum.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -434,7 +443,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(109, 86);
+            this.label5.Location = new System.Drawing.Point(112, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 6;
@@ -442,7 +451,7 @@
             // 
             // allAbsencesNum
             // 
-            this.allAbsencesNum.Location = new System.Drawing.Point(160, 52);
+            this.allAbsencesNum.Location = new System.Drawing.Point(163, 40);
             this.allAbsencesNum.Name = "allAbsencesNum";
             this.allAbsencesNum.Size = new System.Drawing.Size(116, 26);
             this.allAbsencesNum.TabIndex = 5;
@@ -450,7 +459,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 54);
+            this.label4.Location = new System.Drawing.Point(52, 42);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 20);
             this.label4.TabIndex = 4;
@@ -465,7 +474,7 @@
             0,
             0,
             0});
-            this.netNum.Location = new System.Drawing.Point(160, 116);
+            this.netNum.Location = new System.Drawing.Point(163, 104);
             this.netNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -480,7 +489,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(120, 118);
+            this.label3.Location = new System.Drawing.Point(123, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 20);
             this.label3.TabIndex = 2;
@@ -494,7 +503,7 @@
             0,
             0,
             0});
-            this.grossNum.Location = new System.Drawing.Point(160, 20);
+            this.grossNum.Location = new System.Drawing.Point(163, 8);
             this.grossNum.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -509,7 +518,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(102, 22);
+            this.label2.Location = new System.Drawing.Point(105, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 0;
@@ -517,7 +526,7 @@
             // 
             // closeEditPayrollPanel
             // 
-            this.closeEditPayrollPanel.Location = new System.Drawing.Point(30, 576);
+            this.closeEditPayrollPanel.Location = new System.Drawing.Point(73, 22);
             this.closeEditPayrollPanel.Name = "closeEditPayrollPanel";
             this.closeEditPayrollPanel.Size = new System.Drawing.Size(75, 35);
             this.closeEditPayrollPanel.TabIndex = 5;
@@ -527,7 +536,7 @@
             // 
             // editPayrollBtn
             // 
-            this.editPayrollBtn.Location = new System.Drawing.Point(204, 576);
+            this.editPayrollBtn.Location = new System.Drawing.Point(160, 22);
             this.editPayrollBtn.Name = "editPayrollBtn";
             this.editPayrollBtn.Size = new System.Drawing.Size(75, 35);
             this.editPayrollBtn.TabIndex = 3;
@@ -541,7 +550,7 @@
             this.editEmployeeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editEmployeeLbl.Location = new System.Drawing.Point(0, 0);
             this.editEmployeeLbl.Name = "editEmployeeLbl";
-            this.editEmployeeLbl.Size = new System.Drawing.Size(308, 54);
+            this.editEmployeeLbl.Size = new System.Drawing.Size(291, 54);
             this.editEmployeeLbl.TabIndex = 0;
             this.editEmployeeLbl.Text = "Edit Employee Payroll";
             this.editEmployeeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -551,18 +560,19 @@
             this.workDgv.AllowUserToAddRows = false;
             this.workDgv.AllowUserToDeleteRows = false;
             this.workDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.workDgv.Location = new System.Drawing.Point(1, 45);
+            this.workDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.workDgv.Location = new System.Drawing.Point(0, 0);
             this.workDgv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.workDgv.Name = "workDgv";
             this.workDgv.ReadOnly = true;
-            this.workDgv.Size = new System.Drawing.Size(1281, 579);
+            this.workDgv.Size = new System.Drawing.Size(981, 636);
             this.workDgv.TabIndex = 2;
             this.workDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.workDgv_CellContentClick);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 12);
+            this.label12.Location = new System.Drawing.Point(11, 11);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(134, 20);
             this.label12.TabIndex = 20;
@@ -570,26 +580,52 @@
             // 
             // searchTb
             // 
-            this.searchTb.Location = new System.Drawing.Point(152, 9);
+            this.searchTb.Location = new System.Drawing.Point(151, 8);
             this.searchTb.Name = "searchTb";
             this.searchTb.Size = new System.Drawing.Size(467, 26);
             this.searchTb.TabIndex = 21;
             this.searchTb.TextChanged += new System.EventHandler(this.searchTb_TextChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.searchTb);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1289, 46);
+            this.panel2.TabIndex = 22;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.workDgv);
+            this.panel3.Controls.Add(this.editWorkPanel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 46);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1289, 636);
+            this.panel3.TabIndex = 23;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.editPayrollBtn);
+            this.panel4.Controls.Add(this.closeEditPayrollPanel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 663);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(291, 78);
+            this.panel4.TabIndex = 6;
             // 
             // PayrollForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1283, 624);
-            this.Controls.Add(this.editWorkPanel);
-            this.Controls.Add(this.searchTb);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.workDgv);
+            this.ClientSize = new System.Drawing.Size(1289, 682);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "PayrollForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -613,8 +649,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.netNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grossNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workDgv)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -658,5 +697,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label totalDeductionLbl;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }
